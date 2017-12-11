@@ -82,50 +82,55 @@ animator = GetComponent<Animator>();
 
 On void update the first thing we need to do is calculate player distance and
 the random point distance, for this we use Vector3.
-    ```cs
-    playerDist = Vector3.Distance(Player.transform.position, transform.position);
-    irandomPointDist = Vector3.Distance(randomPoints[currentRandomPoint].
-    transform.position, transform.position)
-    ```
+
+```cs
+playerDist = Vector3.Distance(Player.transform.position, transform.position);
+irandomPointDist = Vector3.Distance(randomPoints[currentRandomPoint].
+transform.position, transform.position)
+```
 
 And declare a RaycastHit, this raycasthit will will ensure that our enemy does
 not see the player behind walls.
-    ```cs
-    RaycastHit hit;
-    ```
+
+```cs
+RaycastHit hit;
+```
 
 You can read about *Physics.Raycast*
 [here](https://docs.unity3d.com/ScriptReference/Physics.Raycast.html).
-    ```cs
-    if (Physics.Raycast (transform.position, direction, out hit, 1000) &&
-    playerDist < perceptionDistance ) {
-      if (hit.collider.gameObject.CompareTag("Player")) {
-        seeingPlayer = true;
-      } else {
-        seeingPlayer = false;
-      }
-    }
-    ```
+
+```cs
+if (Physics.Raycast (transform.position, direction, out hit, 1000) &&
+playerDist < perceptionDistance ) {
+  if (hit.collider.gameObject.CompareTag("Player")) {
+    seeingPlayer = true;
+  } else {
+    seeingPlayer = false;
+  }
+}
+```
 
 And walk while our player distance is greater than perception distance.
-    ```cs
-    if ( playerDist > perceptionDistance)
-      walk();
-    ```
+
+```cs
+if ( playerDist > perceptionDistance)
+  walk();
+```
 
 And our walk method is basically set navMesh acceleration, speed and
 destination, like this:
-    ```cs
-    void walk () {
-      if (chasing == false) {
-        navMesh.acceleration = 1;
-        navMesh.speed = walkVelocity;
-        navMesh.destination = randomPoints[currentRandomPoint].position;
-      } else if (chasing == true) {
-        chaseTime = true;
-      }
-    }
-    ```
+
+```cs
+void walk () {
+  if (chasing == false) {
+    navMesh.acceleration = 1;
+    navMesh.speed = walkVelocity;
+    navMesh.destination = randomPoints[currentRandomPoint].position;
+  } else if (chasing == true) {
+    chaseTime = true;
+  }
+}
+```
 
 And now with RaycastHit, player distance and random point distance our script is
 making something like this:
@@ -137,110 +142,120 @@ the blue dotted line it’s the random point distance and the green arrow is our
 RaycastHit.
 
 And here the other 3 behaviors of our enemy:
-    ```cs
-    void look () {
-      navMesh.speed = 0;
-      transform.LookAt (Player);
-    }
 
-    void chase () {
-      navMesh.acceleration = 5;
-      navMesh.speed = chaseVelocity;
-      navMesh.destination = Player.position;
-    }
+```cs
+void look () {
+  navMesh.speed = 0;
+  transform.LookAt (Player);
+}
 
-    void attack () {
-      navMesh.acceleration = 0;
-      navMesh.speed = 0;
-      attacking = true;
-    }
-    ```
+void chase () {
+  navMesh.acceleration = 5;
+  navMesh.speed = chaseVelocity;
+  navMesh.destination = Player.position;
+}
+
+void attack () {
+  navMesh.acceleration = 0;
+  navMesh.speed = 0;
+  attacking = true;
+}
+```
+
 If you are working with animator and animations you can call your animator
 variables here, like this example:
-    ```cs
-    animator.SetFloat("Speed", 0.5f);
-    ```
+
+```cs
+animator.SetFloat("Speed", 0.5f);
+```
 
 The next steps is make a lot of checkings to attack, chase, stop chasing and all
 that stuffs, I will not going into details, but if you have doubts you can
 contact me as I told above.
 
 Here’s the next checkings:
-    ```cs
-    if ( playerDist <= perceptionDistance && playerDist > chaseDistance) {
-      if (seeingPlayer == true)
-        look();
-      else
-        walk();
-    }
 
-    if ( playerDist <= chaseDistance && playerDist > attackDistance) {
-      if (seeingPlayer == true) {
-        chase();
-        chasing = true;
-      } else {
-        walk();
-      }
-    }
+```cs
+if ( playerDist <= perceptionDistance && playerDist > chaseDistance) {
+  if (seeingPlayer == true)
+    look();
+  else
+    walk();
+}
 
-    if (playerDist <= attackDistance && seeingPlayer == true)
-      attack();
+if ( playerDist <= chaseDistance && playerDist > attackDistance) {
+  if (seeingPlayer == true) {
+    chase();
+    chasing = true;
+  } else {
+    walk();
+  }
+}
 
-    if (randomPointDist <= 8) {
-      currentRandomPoint = Random.Range(0, randomPoints.Length);
-      walk();
-    }
+if (playerDist <= attackDistance && seeingPlayer == true)
+  attack();
 
-    if (chaseTime == true)
-      chaseStopwatch += Time.deltaTime;
+if (randomPointDist <= 8) {
+  currentRandomPoint = Random.Range(0, randomPoints.Length);
+  walk();
+}
 
-    if (chaseStopwatch >= 5 && seeingPlayer == false) {
-      chaseTime = false;
-      chaseStopwatch = 0;
-      chasing = false;
-    }
+if (chaseTime == true)
+  chaseStopwatch += Time.deltaTime;
 
-    if (attacking == true)
-      attackingStopwatch += Time.deltaTime;
-    ```
+if (chaseStopwatch >= 5 && seeingPlayer == false) {
+  chaseTime = false;
+  chaseStopwatch = 0;
+  chasing = false;
+}
+
+if (attacking == true)
+  attackingStopwatch += Time.deltaTime;
+```
+
 And the attack checking:
-    ```cs
-    if (attackingStopwatch >= attackTime && playerDist <= attackDistance) {
-      attacking = true;
-      attackingStopwatch = 0;
-    }
 
-    if (attackingStopwatch >= attackTime && playerDist > attackDistance) {
-      attacking = false;
-      attackingStopwatch = 0;
-    }
-    ```
+```cs
+ if (attackingStopwatch >= attackTime && playerDist <= attackDistance) {
+   attacking = true;
+   attackingStopwatch = 0;
+ }
+
+ if (attackingStopwatch >= attackTime && playerDist > attackDistance) {
+   attacking = false;
+   attackingStopwatch = 0;
+ }
+ ```
+
 If you want to cause damage on player you should add something like this:
-    ```cs
-    playerLife = playerLife - enemyDamage;
 
-    if (playerLife <= 5) {
-      Application.LoadLevel(GameOverSceneName);
-    } else if (attackingStopwatch >= attackTime && playerDist > attackDistance) {
-      attacking = false;
-      attackingStopwatch = 0;
-    }
-    ```
+```cs
+playerLife = playerLife - enemyDamage;
+
+if (playerLife <= 5) {
+  Application.LoadLevel(GameOverSceneName);
+} else if (attackingStopwatch >= attackTime && playerDist > attackDistance) {
+  attacking = false;
+  attackingStopwatch = 0;
+}
+```
+
 I really recommend your playerLife be a variable of an script of the player.
 
 Finally, if you want that’s your player can attack the enemy you can add
 rigidBody component to your enemy and make this:
-    ```cs
-    void OnCollisionEnter (Collision col) {
 
-      if(col.transform.tag == "Bullet"){
-        enemyLife -= 10;
-        if (enemyLife <= 0) {
-          Destroy (gameObject);
-        }
-      }
+```cs
+void OnCollisionEnter (Collision col) {
+
+  if(col.transform.tag == "Bullet"){
+    enemyLife -= 10;
+    if (enemyLife <= 0) {
+      Destroy (gameObject);
     }
-    ```
+  }
+}
+```
 
 And now we finished our simple artificial intelligence script and you can use
 for your simple game, study and improve, in a few months I will post the second
