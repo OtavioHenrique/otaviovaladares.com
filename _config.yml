@@ -90,34 +90,22 @@ friends: [
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "乱序",
-        href: "http://mida.re/"
+        title: "AkitaOnRails",
+        href: "http://www.akitaonrails.com/?locale=pt-BR"
     },{
-        title: "前端外刊评论",
-        href: "http://qianduan.guru/"
+        title: "Phil Calçado",
+        href: "http://philcalcado.com/"
     },{
-        title: "天镶的博客",
-        href: "http://lingyu.wang/"
+        title: "Rubyblog.pro",
+        href: "http://rubyblog.pro/"
     },{
-        title: "Luke 的自留地",
-        href: "http://hmqk1995.github.io"
+        title: "Blog Caelum [pt-BR]",
+        href: "http://blog.caelum.com.br/"
     },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
+        title: "One Bit Code [pt-BR]",
+        href: "http://onebitcode.com/"
     },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
-    },{
-        title: "前端神盾局",
-        href: "http://wepiaofei.github.io/blog/"
+        title: "Hackernoon",
+        href: "https://hackernoon.com/"
     }
 ]
