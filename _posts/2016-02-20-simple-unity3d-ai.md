@@ -64,19 +64,20 @@ This simple step will make the next things easy.
 To start we need to declare and define our random destination using Random.range
 function and get navMeshAgent component. After this our code looks like this:
 
-    ```c#
+     ```cs
      currentRandomPoint;
      NavMeshAgent navMesh;
 
-     Start () {
-      currentRandomPoint = Random.Range(0, randomPoints.Length);
-      navMesh = transform.GetComponent<NavMeshAgent>();
-    }
-    ```
+     void Start () {
+        currentRandomPoint = Random.Range(0, randomPoints.Length);
+        navMesh = transform.GetComponent<NavMeshAgent>();
+     }
+     ```
 
 If you will use annimator component to use animations on the enemy you should
 declare and use on the void start too, like this:
-      ```c#
+
+      ```cs
       Animator animator;
 
       animator = GetComponent<Animator>();
@@ -285,15 +286,3 @@ the project/code, I was 16 years old when I wrote this.
 And ask me on my Twitter or Linkedin
 
 **Thanks guys, see you soon.**
-
-* [Game Development](https://medium.com/tag/game-development?source=post)
-* [Unity3d](https://medium.com/tag/unity3d?source=post)
-* [Tutorial](https://medium.com/tag/tutorial?source=post)
-
-
-
-### [Otavio Henrique](https://medium.com/@Otavio.henrique)
-
-### [Garagelab](https://medium.com/otavio-henrique?source=footer_card)
-
-Here I can show my follies
