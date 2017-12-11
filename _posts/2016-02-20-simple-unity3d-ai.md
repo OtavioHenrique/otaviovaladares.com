@@ -60,23 +60,25 @@ This simple step will make the next things easy.
 
 To start we need to declare and define our random destination using Random.range
 function and get navMeshAgent component. After this our code looks like this:
-     ```cs
-      public int currentRandomPoint;
-      private NavMeshAgent navMesh;
 
-      void Start () {
-        currentRandomPoint = Random.Range(0, randomPoints.Length);
-        navMesh = transform.GetComponent<NavMeshAgent>();
-      }
-     ```
+```cs
+public int currentRandomPoint;
+private NavMeshAgent navMesh;
+
+void Start () {
+  currentRandomPoint = Random.Range(0, randomPoints.Length);
+  navMesh = transform.GetComponent<NavMeshAgent>();
+}
+```
 
 If you will use annimator component to use animations on the enemy you should
 declare and use on the void start too, like this:
-      ```cs
-      protected Animator animator;
 
-      animator = GetComponent<Animator>();
-      ```
+```cs
+protected Animator animator;
+
+animator = GetComponent<Animator>();
+```
 
 On void update the first thing we need to do is calculate player distance and
 the random point distance, for this we use Vector3.
