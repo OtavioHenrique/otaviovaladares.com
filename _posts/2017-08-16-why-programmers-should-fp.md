@@ -4,18 +4,12 @@ title:      "Why should every programmer learn functional programming?"
 sybtitle:   "Learning functional programming changes the way you think. But, why?"
 date:       2017-08-16 00:00:00
 author:     "Otavio Henrique"
-header-img: "img/in-post/functional-progamming/fp-bg.jpg"
+header-img: "img/in-post/functional-programming/fp-bg.jpg"
 catalog:    true
 tags:
     - Opinion
     - Programming
 ---
-
-# Why should every programmer learn functional programming?
-
-![](https://cdn-images-1.medium.com/max/800/1*ocCCP_pxz2pa26K6kTwOGg.jpeg)
-<span class="figcaption_hack">Source:
-[https://www.linkedin.com/pulse/slow-adoption-functional-programming-banks-abdul-muhit](https://www.linkedin.com/pulse/slow-adoption-functional-programming-banks-abdul-muhit)</span>
 
 Almost all people on their first contact with programming, starts with
 [imperative languages](https://en.wikipedia.org/wiki/Imperative_programming),
