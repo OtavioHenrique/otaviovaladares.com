@@ -4,7 +4,7 @@ title:      "So, I started to use Vim"
 sybtitle:   "and it isn’t too hard"
 date:       2017-08-29 00:00:00
 author:     "Otavio Henrique"
-header-img: "img/in-post/functional-programming/fp-bg.jpeg"
+header-img: "img/in-post/started-use-vim/vim-console.png"
 catalog:    true
 tags:
     - Opinion
