@@ -31,7 +31,7 @@ I will not explain basics features of Unity in this post or programming logic,
 If you have any question please read the reference links or ask me here or on my
 Twitter.
 
-## First Step: Build Scene
+## 1. First Step: Build Scene
 
 ![](https://cdn-images-1.medium.com/max/800/0*EL4ftSsWXOJgTGFL.png)
 
@@ -41,7 +41,7 @@ enemy(blue sphere) on the right top corner and our player on lower left corner
 script on Unity Standard Assets), read more
 [here](https://docs.unity3d.com/Manual/class-CharacterController.html).
 
-## Second Step: Create Navigation Mesh
+## 2. Second Step: Create Navigation Mesh
 
 For our enemy walk on the scene the easiest method is create a navigation mesh
 on the scene and add a Nav Mesh Agent on the components of our enemy (3D
@@ -58,7 +58,7 @@ your enemy will not work correctly.*
 
 This simple step will make the next things easy.
 
-## Third Step: Our script
+## 3. Third Step: Our script
 
 To start we need to declare and define our random destination using Random.range
 function and get navMeshAgent component. After this our code looks like this:
