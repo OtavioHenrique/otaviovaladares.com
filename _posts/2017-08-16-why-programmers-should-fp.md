@@ -44,6 +44,8 @@ Quora.](https://www.quora.com/What-is-the-difference-between-functional-and-impe
 * [Nice question/answers on
 stackoverflow](https://stackoverflow.com/questions/17826380/what-is-difference-between-functional-and-imperative-programming-languages)
 
+![](https://s3.amazonaws.com/garagelabio/why-shoul-fp-programming/fp.png)
+
 <span class="figcaption_hack">Source:
 [https://www.fpcomplete.com/blog/2017/04/pure-functional-programming](https://www.fpcomplete.com/blog/2017/04/pure-functional-programming)</span>
 
@@ -71,6 +73,8 @@ languages, here are simple links as examples to check it.
 
 FP has been gaining popularity and if it continues so, soon it will be required
 in many jobs opportunities.
+
+![](https://s3.amazonaws.com/garagelabio/why-shoul-fp-programming/fp-evolution.png)
 
 <span class="figcaption_hack">Source:
 [https://medium.com/@cscalfani/so-you-want-to-be-a-functional-programmer-part-1-1f15e387e536](https://medium.com/@cscalfani/so-you-want-to-be-a-functional-programmer-part-1-1f15e387e536)</span>
