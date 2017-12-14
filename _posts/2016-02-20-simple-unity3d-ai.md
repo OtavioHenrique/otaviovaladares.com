@@ -4,7 +4,7 @@ title:      "Simple Enemy AI System for Unity3D"
 sybtitle:   "Simple tutorial to get start with enemies"
 date:       2016-02-30 00:00:00
 author:     "Otavio Henrique"
-header-img: "img/in-post/post-simple-unity3d-ai.jpg"
+header-img: "img/in-post/post-simple-unity3d-ai/ai.jpg"
 catalog:    true
 tags:
     - Unity3d
