@@ -12,7 +12,7 @@ tags:
     - Tools
 ---
 
-![](https://cdn-images-1.medium.com/max/800/1*ro1QoXvKwQjgl0WCq5KZEQ.png)
+![](https://s3.amazonaws.com/garagelabio/started-use-vim/vim-logo.png)
 
 Since I started studying programming, I have heard about use Vim to code, but I
 have always used IDEs such as Visual Studio, CLion, IntelliJ, Eclipse, NetBeans,
@@ -46,7 +46,7 @@ You can use Vim everywhere, yes, vim is cross-plataform, almost all operating
 systems supports vim, and others editor like nano no. And plus, you can use vim
 mode in a lot of editors/IDE’s like, emacs, sublime, xcode, eclipse etc.
 
-![](https://cdn-images-1.medium.com/max/800/1*9LsLtjuX0HuZZcHM7kxQHA.jpeg)
+![](https://s3.amazonaws.com/garagelabio/started-use-vim/vim-multi-plataform.jpeg)
 <span class="figcaption_hack">Vim is cross-plataform</span>
 
 Mainly because of these reasons I decided to Start using Vim.
