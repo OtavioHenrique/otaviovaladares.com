@@ -4,7 +4,7 @@ title:      "Simple Enemy AI System for Unity3D"
 sybtitle:   "Simple tutorial to get start with enemies"
 date:       2016-02-30 00:00:00
 author:     "Otavio Henrique"
-header-img: "img/in-post/post-simple-unity3d-ai/ai.jpg"
+header-img: "https://s3.amazonaws.com/garagelabio/simple-ai-system/ai.jpg"
 catalog:    true
 tags:
     - Unity3d
@@ -33,7 +33,7 @@ Twitter.
 
 ## 1. First Step: Build Scene
 
-![](https://cdn-images-1.medium.com/max/800/0*EL4ftSsWXOJgTGFL.png)
+![](https://s3.amazonaws.com/garagelabio/simple-ai-system/ai-map.png)
 
 For this example I have build a simple maze using 3D blocks and positioned the
 enemy(blue sphere) on the right top corner and our player on lower left corner
@@ -51,14 +51,14 @@ sphere).
 move around the game world, using navigation meshes that are created
 automatically from your Scene geometry.“*
 
-![](https://cdn-images-1.medium.com/max/800/0*dHTf-6OyBjSKrluP.png)
+![](https://s3.amazonaws.com/garagelabio/simple-ai-system/nav-mash.png)
 
 *Pay atention on your navigation mesh, it must be bypassing all walls, if not
 your enemy will not work correctly.*
 
 This simple step will make the next things easy.
 
-## 3. Third Step: Our script
+## Third Step: Our script
 
 To start we need to declare and define our random destination using Random.range
 function and get navMeshAgent component. After this our code looks like this:
@@ -137,7 +137,7 @@ void walk () {
 And now with RaycastHit, player distance and random point distance our script is
 making something like this:
 
-![](https://cdn-images-1.medium.com/max/800/0*ifSApAWKUH3wDLuq.png)
+![](https://s3.amazonaws.com/garagelabio/simple-ai-system/ia-route.png)
 
 The orange dotted thick line it’s our script calculating the player distance,
 the blue dotted line it’s the random point distance and the green arrow is our

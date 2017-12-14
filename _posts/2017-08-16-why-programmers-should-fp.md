@@ -67,12 +67,7 @@ languages, here are simple links as examples to check it.
 * [Lisp](http://pchristensen.com/blog/lisp-companies/)
 * [Erlang](https://stackoverflow.com/questions/1636455/where-is-erlang-used-and-why)
 
-([And
-](https://www.washingtonpost.com/business/economy/facebook-to-buy-mobile-messaging-app-whatsapp-for-16-billion/2014/02/19/920059c2-99b4-11e3-80ac-63a8ba7f7942_story.html?utm_term=.f56f8e7d0dad)if
-you doubt, [remember in 2014 a company named WhatsApp
-](https://www.washingtonpost.com/business/economy/facebook-to-buy-mobile-messaging-app-whatsapp-for-16-billion/2014/02/19/920059c2-99b4-11e3-80ac-63a8ba7f7942_story.html?utm_term=.f56f8e7d0dad)that
-was made using[ Erlang was bought by U$16 billion by
-Facebook](https://www.washingtonpost.com/business/economy/facebook-to-buy-mobile-messaging-app-whatsapp-for-16-billion/2014/02/19/920059c2-99b4-11e3-80ac-63a8ba7f7942_story.html?utm_term=.f56f8e7d0dad))
+[And if you doubt, remember in 2014 a company named WhatsApp that was made using[ Erlang was bought by U$16 billion by Facebook](https://www.washingtonpost.com/business/economy/facebook-to-buy-mobile-messaging-app-whatsapp-for-16-billion/2014/02/19/920059c2-99b4-11e3-80ac-63a8ba7f7942_story.html?utm_term=.f56f8e7d0dad)
 
 FP has been gaining popularity and if it continues so, soon it will be required
 in many jobs opportunities.
