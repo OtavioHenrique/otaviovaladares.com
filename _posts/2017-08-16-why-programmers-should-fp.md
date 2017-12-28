@@ -3,7 +3,7 @@ layout:     post
 title:      "Why should every programmer learn functional programming?"
 sybtitle:   "Learning functional programming changes the way you think. But, why?"
 date:       2017-08-16 00:00:00
-author:     "Otavio Henrique"
+author:     "Octos"
 header-img: "img/in-post/functional-programming/fp-bg.jpeg"
 tags:
     - Opinion
