@@ -1,5 +1,3 @@
-### 1. Introduction
-
 On this post I’ll teach how to make an rest api in few minutes using rails 5 api
 only, I know this is to late (ruby 5 was released in more than year ago), but
 I’ll try to make a good tutorial that need only some minutes and only one post.
