@@ -5,6 +5,7 @@ sybtitle:   "and it isn’t too hard"
 date:       2017-08-29 00:00:00
 author:     "Octos"
 header-img: "img/in-post/started-use-vim/vim-console.jpg"
+header-mask:  0.5
 tags:
     - Opinion
     - Programming

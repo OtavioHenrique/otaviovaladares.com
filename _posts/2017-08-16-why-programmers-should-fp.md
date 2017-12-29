@@ -5,6 +5,7 @@ sybtitle:   "Learning functional programming changes the way you think. But, why
 date:       2017-08-16 00:00:00
 author:     "Octos"
 header-img: "img/in-post/functional-programming/fp-bg.jpeg"
+header-mask:  0.5
 tags:
     - Opinion
     - Programming
