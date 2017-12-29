@@ -18,6 +18,6 @@ tags:
 
 <!-- English Version -->
 <div class="en post-container">
-    {% capture about_en %}{% include _includes/posts/2017-11-19-creating-simple-api-rails/en.md %}{% endcapture %}
+    {% capture about_en %}{% include posts/2017-11-19-creating-simple-api-rails/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>

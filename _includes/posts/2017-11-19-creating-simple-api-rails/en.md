@@ -1,5 +1,3 @@
-## Creating simple REST API with Rails 5
-
 ### 1. Introduction
 
 On this post I’ll teach how to make an rest api in few minutes using rails 5 api
