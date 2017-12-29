@@ -130,17 +130,17 @@ you, not just the route*
 *But if you do that your routes will look like this:*
 
 ```ruby
-    constraints subdomain: 'api' do
-    end
-    api_version(:module => "V1", :path => {:value => "v1"}) do
-    end
+constraints subdomain: 'api' do
+end
+api_version(:module => "V1", :path => {:value => "v1"}) do
+end
 ```
 
 And you will need to put:
 
 ```ruby
-    api_version(:module => "V1", :path => {:value => "v1"}) do
-    end
+api_version(:module => "V1", :path => {:value => "v1"}) do
+end
 ```
 
 Inside your namespace. But if you want to do with your fingers just write this
@@ -157,7 +157,9 @@ Christie12.6 ouncesWilliam MorrowEnglish272October 24, 2017
 
 For create this automatically just type:
 
-    rails g model Book title:string author:string weight:string publisher:string language:string pages:integer publication_date:datetime
+`
+rails g model Book title:string author:string weight:string publisher:string language:string pages:integer publication_date:datetime
+`
 
 *Rails output*
 
@@ -178,7 +180,7 @@ db:migrate` to create book table. Now you can see your file at
 Go to your `routes.rb` and add:
 
 ```ruby
-    resources :books
+resources :books
 ```
 
 After this, create the books controller inside version 1
@@ -188,20 +190,22 @@ Books controller path: `app/controllers/v1/books_controller.rb`
 After this, enter in you file and type:
 
 ```ruby
-    # frozen_string_literal: true
+# frozen_string_literal: true
 
-    class V1::BooksController < ApplicationController
-      def index
-        books = Book.all
-        render json: { books: books }, status: :ok
-      end
-    end
+class V1::BooksController < ApplicationController
+  def index
+    books = Book.all
+    render json: { books: books }, status: :ok
+  end
+end
 ```
 
 and we’re done, but for test we need to create some books on database. Type
 `rails c` on your terminal and let's do that.
 
-    Book.create(title: "Atlas Shrugged", author: "Ayn Rand", weight: "3.4 pounds", publisher: "Dutton", language: "English", pages: 1168, publication_date: "April 21, 2005")
+`
+Book.create(title: "Atlas Shrugged", author: "Ayn Rand", weight: "3.4 pounds", publisher: "Dutton", language: "English", pages: 1168, publication_date: "April 21, 2005")
+`
 
 Feels free to alter this data and create different books for you.
 
@@ -251,7 +255,7 @@ show you how to use.
 First of all, open your gemfile and add:
 
 ```ruby
-    gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.0'
 ```
 
 And run `bundle`
@@ -271,10 +275,10 @@ books: books }` and put just `json: books` for we start using the AMS.
 The final code of the index action of books_controller.rb will be like:
 
 ```ruby
-    def index
-      books = Book.all
-      render json: books, status: :ok
-    end
+def index
+  books = Book.all
+  render json: books, status: :ok
+end
 ```
 
 Now if we restart our server and make the same `GET
@@ -295,18 +299,22 @@ Don’t panic, this is normal! We’ll see only Ids of the books because we don�
 set up our books serializer to output others attributes, to fix this, open your
 `app/serializers/v1/book_serializer.rb` and you will see only this:
 
-    class V1::BookSerializer < ActiveModel::Serializer
-      attributes :id
-    end
+```ruby
+class V1::BookSerializer < ActiveModel::Serializer
+  attributes :id
+end
+```
 
 The only attribute that is outputing is `id` and we need to add more things, add
 the others things of the model that you want to show (I will add everything
 except `created_at` and `updated_at` because I don't think necessary), and my
 code will look like:
 
-    class V1::BookSerializer < ActiveModel::Serializer
-      attributes :id, :title, :author, :weight, :publisher, :language, :pages, :publication_date
-    end
+```ruby
+class V1::BookSerializer < ActiveModel::Serializer
+  attributes :id, :title, :author, :weight, :publisher, :language, :pages, :publication_date
+end
+```
 
 Now if we call our API again, we will get:
 
@@ -344,9 +352,9 @@ on the last json, `2005-04-21T00:00:00.000Z` is not good for me, let's fix this,
 on the `BookSerializer` add this method:
 
 ```ruby
-    def publication_date
-      object.publication_date.strftime "%Y-%m-%d"
-    end
+def publication_date
+  object.publication_date.strftime "%Y-%m-%d"
+end
 ```
 
 With this, we’re taking the `object` that is book record in this context and
@@ -384,7 +392,9 @@ resposes. I really recommend that you read more about
 Create a file named `active_record_serializer.rb` at `config/initializers/` and
 put this inside:
 
+```ruby
     ActiveModelSerializers.config.adapter = :json_api
+```
 
 Restart your application, make the same call for your API and see the
 difference.
@@ -497,10 +507,10 @@ tests, it’s cool to see your application running.*
 The same thing of action create, but you need to write this at controller:
 
 ```ruby
-    def show
-      book = Book.find(params[:id])
-      render json: book, status: :ok
-    end
+def show
+  book = Book.find(params[:id])
+  render json: book, status: :ok
+end
 ```
 
 And go to your postman and make this request: `GET
@@ -535,15 +545,15 @@ example I used 1.*
 Update it’s like the action create with some changes:
 
 ```ruby
-    def update
-        book = Book.find(params[:id])
+def update
+    book = Book.find(params[:id])
 
-        if book.update(book_params)
-          render json: book, status: :ok
-        else
-          render json: { errors: book.errors }, status: :unprocessable_entity
-        end
-      end
+    if book.update(book_params)
+      render json: book, status: :ok
+    else
+      render json: { errors: book.errors }, status: :unprocessable_entity
+    end
+  end
 ```
 
 Now just `PUT http://api.library.com:300/v1/books/5` with this json:
@@ -584,11 +594,11 @@ want.*
 Destroy it’s the easiest action of the CRUD, you just need to write:
 
 ```ruby
-    def destroy
-      book = Book.find(params[:id])
-      book.destroy
-      head 204
-    end
+def destroy
+  book = Book.find(params[:id])
+  book.destroy
+  head 204
+end
 ```
 
 And that’s all, to test, make a request `DELETE
