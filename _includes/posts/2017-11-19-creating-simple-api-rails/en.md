@@ -17,7 +17,7 @@ First of all, we will start a new rails project with mysql database using the
 api mode introduced on rails 5. I passed -T flag to skip test unit because I’ll
 use rspec on this project, but if you prefer Minitest you can use this.
 
-    rails new library --api -d mysql -T
+`rails new library --api -d mysql -T`
 
 #### 2.1 Installing Rspec
 
@@ -25,14 +25,18 @@ Accessing the [github of rspec](https://github.com/rspec/rspec-rails).
 
 For install just add to your GEMFILE on the development/test group:
 
-    group :development, :test do
-      gem 'rspec-rails', '~> 3.6'
-    end
+```ruby
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+end
+```
 
 And to avoid future work, add [factory
 girl](https://github.com/thoughtbot/factory_girl) to your gemfile too.
 
-    gem 'factory_girl'
+```ruby
+gem 'factory_girl'
+```
 
 After this, just run `bundle install` and wait the end of processs, after this,
 run `rails generate rspec:install` and you'll see rspec creating his folders and
@@ -51,15 +55,18 @@ After this we finished the configuration of our test suit.
 
 Open your routes.rb and I think it will look like this:
 
-    Rails.application.routes.draw do
-    end
-
+```ruby
+Rails.application.routes.draw do
+end
+```
 And replace to this:
 
-    Rails.application.routes.draw do
-      constraints subdomain: 'api' do
-      end
-    end
+```ruby
+Rails.application.routes.draw do
+  constraints subdomain: 'api' do
+  end
+end
+```
 
 With this we’re telling to rails that our application can be accessed on url
 `api.<some_name>.com/` (With `api` subdomain).
@@ -86,9 +93,10 @@ And that’s all. Now you can develop using curl/postman easily.
 
 Open your GEMFILE to add the fallowing gems:
 
-    # A plugin for versioning Rails based RESTful APIs.
-    gem 'versionist'
-
+```ruby
+# A plugin for versioning Rails based RESTful APIs.
+gem 'versionist'
+```
 And just run `bundle install` and wait. After installing your dependencies we
 can configure our project to work with versionist gem, this gem easily provide
 api versioning for our project, and I'll show you.
@@ -121,15 +129,19 @@ you, not just the route*
 
 *But if you do that your routes will look like this:*
 
+```ruby
     constraints subdomain: 'api' do
     end
     api_version(:module => "V1", :path => {:value => "v1"}) do
     end
+```
 
 And you will need to put:
 
+```ruby
     api_version(:module => "V1", :path => {:value => "v1"}) do
     end
+```
 
 Inside your namespace. But if you want to do with your fingers just write this
 `api_version(...)` with your hands!
@@ -165,7 +177,9 @@ db:migrate` to create book table. Now you can see your file at
 
 Go to your `routes.rb` and add:
 
+```ruby
     resources :books
+```
 
 After this, create the books controller inside version 1
 
@@ -173,6 +187,7 @@ Books controller path: `app/controllers/v1/books_controller.rb`
 
 After this, enter in you file and type:
 
+```ruby
     # frozen_string_literal: true
 
     class V1::BooksController < ApplicationController
@@ -181,6 +196,7 @@ After this, enter in you file and type:
         render json: { books: books }, status: :ok
       end
     end
+```
 
 and we’re done, but for test we need to create some books on database. Type
 `rails c` on your terminal and let's do that.
@@ -234,7 +250,9 @@ show you how to use.
 
 First of all, open your gemfile and add:
 
+```ruby
     gem 'active_model_serializers', '~> 0.10.0'
+```
 
 And run `bundle`
 
@@ -252,10 +270,12 @@ books: books }` and put just `json: books` for we start using the AMS.
 
 The final code of the index action of books_controller.rb will be like:
 
+```ruby
     def index
       books = Book.all
       render json: books, status: :ok
     end
+```
 
 Now if we restart our server and make the same `GET
 http://api.library.com:3000/v1/books` will we see this output:
@@ -323,9 +343,11 @@ One thing is troubling me on this response, it’s publication_date format, look
 on the last json, `2005-04-21T00:00:00.000Z` is not good for me, let's fix this,
 on the `BookSerializer` add this method:
 
+```ruby
     def publication_date
       object.publication_date.strftime "%Y-%m-%d"
     end
+```
 
 With this, we’re taking the `object` that is book record in this context and
 formating date, remember that you can add any custom method using this, just
@@ -425,6 +447,7 @@ Let’s start with creating action of our books. Since we already have the creat
 route created we just need to code create action on, `v1/books_controller.rb`,
 open this file, and write:
 
+```ruby
     def create
       book = Book.new(book_params)
 
@@ -439,6 +462,7 @@ open this file, and write:
       def book_params
         params.require(:book).permit(:title, :author, :weight, :publisher, :language, :pages, :publication_date)
       end
+```
 
 Go yo your postman to test our new action, and `POST
 http://api.library.com:3000/v1/books` and make a request with this body:
@@ -472,10 +496,12 @@ tests, it’s cool to see your application running.*
 
 The same thing of action create, but you need to write this at controller:
 
+```ruby
     def show
       book = Book.find(params[:id])
       render json: book, status: :ok
     end
+```
 
 And go to your postman and make this request: `GET
 http://api.library.com:3000/v1/books/1` and you will see your `id: 1` book on
@@ -508,6 +534,7 @@ example I used 1.*
 
 Update it’s like the action create with some changes:
 
+```ruby
     def update
         book = Book.find(params[:id])
 
@@ -517,6 +544,7 @@ Update it’s like the action create with some changes:
           render json: { errors: book.errors }, status: :unprocessable_entity
         end
       end
+```
 
 Now just `PUT http://api.library.com:300/v1/books/5` with this json:
 
@@ -555,11 +583,13 @@ want.*
 
 Destroy it’s the easiest action of the CRUD, you just need to write:
 
+```ruby
     def destroy
       book = Book.find(params[:id])
       book.destroy
       head 204
     end
+```
 
 And that’s all, to test, make a request `DELETE
 http://api.library.com:3000/v1/books/2` and you will delete the second book of
