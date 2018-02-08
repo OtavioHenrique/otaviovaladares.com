@@ -9,9 +9,7 @@ header-mask:  0.5
 catalog:      true
 multilingual: true
 tags:
-    - Rails
-    - Ruby
-    - API
+    - Algorithms
     - Tutorial
     - Beginners
 ---
