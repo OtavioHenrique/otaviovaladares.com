@@ -1,11 +1,11 @@
 # Site settings
-title: Garagelab Blog
-SEOTitle: Garagelabs Blog
+title: Otavio Valadares Blog
+SEOTitle: Otavio Valadares Blog
 header-img: img/home-bg.jpg
 email: otaviopvalares@gmail.com
 description: "My personal blog where I usually post about my experiences and studies"
-keyword: "Otavio Henrique, Ruby, Linux, Software Engineering, IT, Tech Blog, Tutorials"
-url: "https://garagelab.io"              # your host, for absolute URL
+keyword: "Otavio Henrique, Ruby, Linux, Software Engineering, IT, Tech Blog, Tutorials, Otavio Valadares"
+url: "https://otaviovaladares.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -98,6 +98,12 @@ friends: [
     },{
         title: "Rubyblog.pro",
         href: "http://rubyblog.pro/"
+    },{
+        title: "Tenderlove ",
+        href: "https://tenderlovemaking.com/"
+    },{
+        title: "Discord Engineering",
+        href: "https://blog.discordapp.com/tagged/engineering"
     },{
         title: "Blog Caelum [pt-BR]",
         href: "http://blog.caelum.com.br/"
