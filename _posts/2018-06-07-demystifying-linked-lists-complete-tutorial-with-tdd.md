@@ -850,7 +850,7 @@ Testing on that order:
 
 We finished our tests, feel comfortable to test anything you want.
 
-## 2.3 Finishing
+## 3.0 Finishing
 
 Now we got our list finished and working and I hope that you have learned a lot with this post. I love to implement data structures because I think that we can learn a lot doing this simple exercises, on the next post I'll talk about ordered datasets and sorting and search algorithms and I think it will be very funny. (depending on when you are reading this, probably I already writed that post, you can check [here](https://otaviovaladares.com))
 
