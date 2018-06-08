@@ -18,10 +18,6 @@ When you're starting with ruby programming, a lot of people (and me too), usuall
 
 ## Each
 
-O each executa para cada elemento a logica passada no bloco.
-
-Se você for iterar um array em Ruby usando um simples for igual as outras linguagens, provavelmente você irá fazer algo parecido com isso:
-
 Each executes for each element the logic passed in block.
 
 For example, if you want to `print` each element of one array using what we usually do in another languages with `for` loops, it will look like this:
