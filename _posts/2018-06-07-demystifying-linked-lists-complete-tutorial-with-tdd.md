@@ -4,7 +4,7 @@ title:        "Demystifying Linked Lists / Complete tutorial/implementation with
 subtitle:     "with a lot of images to easy understand"
 date:         2018-06-07 22:46:00
 author:       "Octos"
-header-img:   "img/in-post/linked_list/list_banner.png"
+header-img:   "img/in-post/linked_list/list_banner.jpg"
 header-mask:  0.5
 catalog:      true
 multilingual: true
