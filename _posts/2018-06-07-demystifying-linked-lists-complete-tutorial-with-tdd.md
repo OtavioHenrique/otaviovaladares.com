@@ -2,7 +2,7 @@
 layout:       post
 title:        "Demystifying Linked Lists / Complete tutorial/implementation with TDD"
 subtitle:     "with a lot of images to easy understand"
-date:         2018-06-01 01:36:00
+date:         2018-06-07 22:46:00
 author:       "Octos"
 header-img:   "img/in-post/linked_list/list_banner.png"
 header-mask:  0.5
