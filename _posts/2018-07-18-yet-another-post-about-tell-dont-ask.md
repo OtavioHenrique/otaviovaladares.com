@@ -223,6 +223,13 @@ Luckily on internet we've hundreds of examples in many languages, you should sea
 
 [On this article from thoughtbot you can see a lot of interesting and more real world examples](https://robots.thoughtbot.com/tell-dont-ask).
 
+Sandi Metz in her famous book [Practical Object-Oriented Design in Ruby: An Agile Primer ](https://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) wrote: 
+
+*"The distinction between a message that asks for what the sender wants and a message
+that tells the receiver how to behave may seem subtle but the consequences are
+significant. Understanding this difference is a key part of creating reusable classes with
+well-defined public interfaces"*
+
 
 ## Final thoughts
 
