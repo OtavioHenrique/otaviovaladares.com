@@ -1,10 +1,10 @@
 ---
 layout:       post
-title:        "Pointer, a brief view"
+title:        "Pointers, a brief view"
 subtitle:     "Understanding the basics"
 date:         2018-08-12 13:10:00
 author:       "Octos"
-header-img:   "img/in-post/pointers/pointers-brief-vieww.jpg"
+header-img:   "img/in-post/pointers/pointers-brief-view.jpg"
 header-mask:  0.5
 catalog:      true
 multilingual: true
@@ -178,6 +178,8 @@ response value: 10
 ```
 
 On this example, we send the `counter` variable to the void function `sum` that stores at `counter` the sum of `counter` and `age`, after this we print the value of `counter` inside the function an we see the value 15 printed, but on the printf outside the function at main, we got 10, why? This is what we call pass by value and C passes arguments to function by value, almost all languages pass by value (Java, C#, Ruby, Python), and there isn't direct way for the called function to alter a variable in the calling function.
+
+![Pass by value](https://s3.amazonaws.com/garagelabio/pointers/pass_by_value.png)
 
 But in C we can do what we call pass by reference, we call the function passing variable address and receiving as a pointer, doing this you're saying to function "Hey, that's the value memory address, pick this and alter as you want".
 
