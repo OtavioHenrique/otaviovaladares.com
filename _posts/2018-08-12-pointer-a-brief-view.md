@@ -89,7 +89,7 @@ The memory address is very interesting and would be good that we can store it at
 
 ## Pointers
 
-Pointers in computer science is an object (usually a variable) that stores the memory address of another value. In C you can declare a pointer using an Asterisk before the name of the variable and store an address of a variable of the same type of the pointer.
+Pointers in computer science is an object (usually a variable) that stores the memory address of another value. In C you can declare a pointer using an asterisk before the name of the variable and store an address of a variable of the same type of the pointer.
 
 ```c
 int counter = 0;
@@ -97,13 +97,17 @@ int counter = 0;
 int *pointerCounter = &counter;
 ```
 
-*Note that pointers always point to a specific data type, we have one exception on type void.*
+*Note: Pointers always point to a specific data type, we have one exception on type void.*
 
 In C we can see the value stored at the address of pointed memory too, for this, use the asterisk before the name of the pointer:
 
 ```c
 printf("Pointer value of the pointed memory: %i\n", *pointerCounter);
 ```
+
+*When a pointer is pointing to a value, the pointer only stores the address of the first byte of this value, when asked, C uses the data type of the pointer to walk over the next `n` bytes to see the full pointed value.*
+
+*For example, if we're pointing to an integer and the first byte of this integer is locatted on `0x7ffe3bc5e164` (see the previus image), the pointer will only store the `0x7ffe3bc5e164` and when asked for the vallue will know to walk +4 right because integer is a datatype of 4 bytes.*
 
 To understand better, is nice to examine and run the fallowing example:
 
