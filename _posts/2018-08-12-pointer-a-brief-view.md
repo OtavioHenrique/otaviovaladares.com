@@ -183,6 +183,8 @@ On this example, we send the `counter` variable to the void function `sum` that 
 
 But in C we can do what we call pass by reference, we call the function passing variable address and receiving as a pointer, doing this you're saying to function "Hey, that's the value memory address, pick this and alter as you want".
 
+![Pass by reference](https://s3.amazonaws.com/garagelabio/pointers/pass_by_reference.png)
+
 ```c
 void sum(int *counter, int age) {
 *counter = *counter + age;
