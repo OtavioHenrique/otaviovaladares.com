@@ -1,0 +1,165 @@
+---
+layout:       post
+title:        "Logic Programming"
+subtitle:     "Programming by other point of vie"
+date:         2018-08-12 13:10:00
+author:       "Octos"
+header-img:   "img/in-post/logic-programming/the-thinker.jpg"
+header-mask:  0.5
+catalog:      true
+multilingual: true
+tags:
+    - Programming Languages
+    - Paradigm of Programming
+    - Logic Programming
+    - Prolog
+    - Theorical Content
+---
+
+Let’s talk about logic programming, I think everybody who completed the college or study computer science by yourself (like me), already have heard about logic programming, what it’s exactly? When talking about programming we have a lot of paradigms of programming languages and logic is one of them, but unfortunately isn’t very popular, to be sincere prolog is most used by academia. But don’t worry learn logic programming can be good to expand your knowledge and see the things from other perspectives, understanding a new paradigm of programming is a new way of thinking.
+
+On this post, I'll talk about what I've liked on Prolog and how to get started.
+
+Warning:
+
+* I'm not an expert of Prolog 
+* This post doesn't have advanced content 
+* Every example of this post will be written in Prolog
+* This post have a strong theorical content, if you don't like, feel free to jump to "First Steps" paragraph.
+
+"The inception of logic is tied with that of scientific thinking. Logic provides a precise language for the explicit expression of one’s goals, knowledge, and assumptions. Logic provides the foundation for deducing consequences from premises; for studying the truth or falsity of statements given the truth or falsity of other statements; fir establishing the consistency of one’s claims; and for verifying the validity of one’s arguments.” - Sterling, 1986 The art of Prolog.
+
+## What is logic?
+
+I think the key to understanding logic programming is not your background in computer systems, the key is your knowledge of philosophy, you need to know and understand what is the Aristotelian logic, I’m not a philosopher so I’ll try to explain from my point of view on the simplest way, not going deep on advanced topics.
+
+Let’s go back to our high school and talk about mid 350 B.C, Aristotle the Ancient Greek philosopher developed something named term logic aka traditional logic or Aristotelian logic.
+
+### Aristotle
+
+Aristotle's logical work is collected in the six texts that are collectively known as the Organon. Two of these texts in particular, namely the Prior Analytics and De Interpretatione, contain the heart of Aristotle's treatment of judgments and formal inference, and it is principally this part of Aristotle's works that is about term logic.
+
+![Aristotle](https://s3.amazonaws.com/garagelabio/logic_programming/aristotle.jpeg)
+
+The fundamental assumption behind the theory is that propositions are composed of two terms, where terms is a part of speech representing something, and that the reasoning process is in turn built from propositions.
+
+Propositions needs to follow the [Three Laws of Thought](https://oregonstate.edu/instruct/phl201/modules/Philosophers/Aristotle/aristotle_laws_of_thought.html)
+
+* Law of Identity, A is A. Everything is the same as itself.
+* The Law of Noncontradiction, NOT ( A and not A) - Nothing can both exist and not exist at the same time and in the same respect; or no statement can be both true and false.
+* Law of Excluded Middle, EITHER (A or not A) - Something either exists or doesn’t exists; or every statement is either true or false.  
+
+This reasoning process is often called syllogism (“conclusion, inference”), that is when you apply deductive reasoning to arrive at a conclusion based on two or more propositions that are asserted or assumed to be true. 
+
+The syllogism is basically one conclusion based on prepositions.
+
+When talking about syllogism, the most common example is the one given by Aristotle.
+
+    All men are mortal.
+    Socrates is a man.
+    Therefore, Socrates is mortal.
+
+Each syllogism consists of three parts:
+
+    Major premise
+    Minor premise
+    Conclusion
+
+
+Each part is a categorical proposition, and each categorical proposition contains two categorical terms. Each of the premises has one term in common with the conclusion: in a major premise, this is the major term, in a minor premise, this is the minor term. This is also called singular terms.
+
+Major premise:  All men are mortal.
+Minor premise: Socrates is a man.
+Conclusion: Therefore, Socrates is mortal.
+
+The premises also have one term in common with each other, which is known as the middle term; in this example, man.
+
+This is a very large study and I know that’s not all to study about logic, if you like this topic stay studying it, but I think that is the necessity to understand the principles of logic programming, now that we remember (or learned) what is logic, let’s talk about logic programming.
+
+“Logic is an instrument for advancing knowledge"
+
+## What is Logic Programming?
+
+Most programmers at day to day work deal with imperative languages, the main characteristic of imperative languages is the way that you change the programs state giving a statement, step by step (How to). 
+
+Programs written in a logic programming languages computation is dealing with relations rather than with single-valued functions, these relations are defined by a set of rules about some problem domain and these rules are written by the programmer, this concept leads us to one of the main characteristics of logic programming:
+
+"Logic programming is composed of to things, the logic and the control."   
+
+
+The logic component is the definition of the problem while the control is more like the way to get the solution, the rules.
+
+*Algorithm = Logic + Control*
+where "Logic" represents a logic program and "Control" represents different theorem-proving strategies.
+
+
+Logic programming is a type of programming paradigm which is largely based on formal logic, that's more like "What is", with you asking the computer for answers.
+
+
+So, in a simple conclusion logic programming is much like telling the system the problem, the rules based on formal logic, and asking for the answer (declarative) than giving a step by step instructions to solve the problem.
+
+## What is Prolog?
+
+It’s hard to talk about logic programming without talk about Prolog. Prolog is a logic programming language based on first-order logic and formal logic, designed in 1970 by Alain Colmerauer. The program logic is expressed in terms of relations, represented as facts and rules. A computation is initiated by running a query over these relations. Today, I think Prolog is the most popular logic programming language.
+
+The name is a French abbreviation for "Programming in Logic".
+
+## First Steps
+
+All the pilars of logic programming inherits from logic (that we studied above), terms and statements.
+
+We've three basic statements: *Facts*, *Rules* and *Queries* and a single data structure called *Logical Term*
+
+### Facts
+
+The simplest kind of statement in Prolog is called *fact*, and we'll start our study talking about it.
+
+Fact is basically the relation the objects hold between each other:
+
+```prolog
+mother(elizabeth, charles).
+```
+
+This is the most basic example of fact, it's hold the relation between Elizabeth and Charles an tell that this relation is mother. 
+
+We say *atoms* to refer to the name of the things that the predicate is telling the relations, on this example, Elizabeth and Charles are both *atoms*.
+
+You can also speak *predicate*, *fact* and *predicate* means the same.
+
+*Note that both predicate and atoms start with lowercase letter, the reason we'll talk soon.*
+
+A set of facts can describe a situation or a series of relations, which will be used by Prolog to execute computations. 
+
+In prolog you need to use dot to say that you finished your statement, don't forget the dot.
+
+With facts we can define simple relations, for example a family tree, this example is considered the "Hello World program of Prolog", and that's what we're going to do now.
+
+For this example, we'll use the left side of Britsh royal family tree. (We'll use only the left side because the entire tree is to big, and would escape the main goal of this text) 
+
+![Left side of royal family tree](https://s3.amazonaws.com/garagelabio/logic_programming/royal_family_simple+(1).png)
+
+Ok, take a look at this tree, how many facts can we define? I think that we can define a lot of predicates, since parental relations till dates like birth or marriage. 
+
+To keep this example simple as possible, let's define only three, *mother*, *father*, *male/female*.
+
+
+
+
+Philosophy reference 
+
+https://en.wikipedia.org/wiki/Term_logic
+https://en.wikipedia.org/wiki/Syllogism#cite_note-11
+https://pt.wikipedia.org/wiki/L%C3%B3gica_aristot%C3%A9lica
+https://en.wikipedia.org/wiki/Law_of_noncontradiction
+https://en.wikipedia.org/wiki/Law_of_excluded_middle
+https://en.wikipedia.org/wiki/Law_of_identity
+https://oregonstate.edu/instruct/phl201/modules/Philosophers/Aristotle/aristotle_syllogisms.html
+https://en.wikipedia.org/wiki/Law_of_thought#The_three_traditional_laws
+
+Logic Programming Reference
+
+file:///home/otavio/Documents/prolog-palazzo.pdf
+https://en.wikipedia.org/wiki/Logic_programming#Logic_and_control
+https://dev.to/matchilling/introduction-to-logic-programming-with-prolog-cdh
+http://sarabander.github.io/sicp/html/4_002e4.xhtml#g_t4_002e4
+https://en.wikipedia.org/wiki/Imperative_programming
