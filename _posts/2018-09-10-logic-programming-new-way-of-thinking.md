@@ -82,19 +82,16 @@ This is a very large study and I know that’s not all to study about logic, if 
 
 Most programmers at day to day work deal with imperative languages, the main characteristic of imperative languages is the way that you change the programs state giving a statement, step by step (How to). 
 
-Programs written in a logic programming languages computation is dealing with relations rather than with single-valued functions, these relations are defined by a set of rules about some problem domain and these rules are written by the programmer, this concept leads us to one of the main characteristics of logic programming:
+Programs written in a logic programming languages, computation is dealing with relations rather than with single-valued functions, these relations are defined by a set of rules about some problem domain and these rules are written by the programmer, this concept leads us to one of the main characteristics of logic programming:
 
-"Logic programming is composed of to things, the logic and the control."   
-
+"Logic programming is composed of two things, the logic and the control."   
 
 The logic component is the definition of the problem while the control is more like the way to get the solution, the rules.
 
 *Algorithm = Logic + Control*
 where "Logic" represents a logic program and "Control" represents different theorem-proving strategies.
 
-
-Logic programming is a type of programming paradigm which is largely based on formal logic, that's more like "What is", with you asking the computer for answers.
-
+Logic programming is a type of programming paradigm which is largely based on formal logic, that's more like "What is", with you asking the computer for answers, it is known as "declarative programming".
 
 So, in a simple conclusion logic programming is much like telling the system the problem, the rules based on formal logic, and asking for the answer (declarative) than giving a step by step instructions to solve the problem.
 
@@ -116,7 +113,7 @@ The simplest kind of statement in Prolog is called *fact*, and we'll start our s
 
 Fact is basically the relation the objects hold between each other:
 
-```prolog
+```erlang
 mother(elizabeth, charles).
 ```
 
@@ -142,8 +139,106 @@ Ok, take a look at this tree, how many facts can we define? I think that we can 
 
 To keep this example simple as possible, let's define only three, *mother*, *father*, *male/female*.
 
+```erlang
+female(elizabeth).
+male(philip).
 
+father(philip, charles).
+mother(elizabeth, charles).
 
+male(charles).
+
+father(charles, william).
+mother(diana, william).
+
+male(william).
+
+father(charles, harry).
+mother(diana, harry).
+
+male(harry).
+
+father(william, george).
+mother(catherine, george).
+
+male(george).
+
+father(william, charlotte).
+mother(catherine, charlotte).
+
+female(charlotte).
+
+father(william, louis).
+mother(catherine, louis).
+
+male(louis).
+```
+
+A little bit big, right? Now imagine if we wrote all the facts about royal family, like dates, marriage, etc.
+
+Now would be fabolous if we can consult these facts, would it?
+
+### Queries
+
+Queries is the second form of statement in logic programs, they are the way of retrieve informations from facts. We can also speak *goal*.
+
+A query asks to Prolog what's the relation between objects, for example, we want to know if Charles is the father of William, just ask to prolog:
+
+```erlang
+father(charles, william).
+```
+
+And Prolog will return `true`, and it will return `false` with we ask something that's not true:
+
+```erlang
+father(diana, william).
+```
+
+*One nice trick is to think like we're asking a question, and Prolog will respond based on facts that it already knows, this is possible because we're working with declarative programming.*
+
+#### The prolog interpreter
+
+When working with simple problems like this, we usually load our prolog file into Prolog interpreter to start querying, assuming that you're using [SWI-prlog](http://www.swi-prolog.org/), you've two ways:
+
+* Start prolog shell using `swipl` and afther this load prolog file writing `consult('path/to/file.pl')`.
+* Already loads `swipl` with your database, using `-s` option, for example: `swipl -s royal_family.pl`
+
+Some useful commands that can help you in your Prolog journey:
+
+* `halt.` closes your interpreter.
+* `listing.` shows facts and rules loaded.
+* `help.` obviusly.
+* `assert(fact).` adds fact to your base.
+* `retract(fact).` removes fact of your base.
+
+Don't feel scared, this is like any REPL of any interpreted language.
+
+This aspect of Prolog can look strange and make some people feel confused at the beginning, but don't worry.
+
+Syntactically both queries and facts can look the same, but you can easily differ by the context.
+
+### The logical variables
+
+Unlike *facts* or *queries* variables isn't a statement, but we need to talk about too. 
+
+## Final Notes
+
+#### Warnings while loading family tree on interpreter
+
+When you load the royal family prolog file at interpreter you'll get a punch of warnings, like this:
+
+```
+Clauses of male/1 are not together in the source-file
+	  Earlier definition at /home/otavio/Documents/prolog/royal_family.pl:2
+	  Current predicate: mother/2
+	  Use :- discontiguous male/1. to suppress this message
+```
+
+The problem is that our base is not grouped by facts, and Prolog encourages it. To solve this warning just group our facts.
+
+#### Execute prolog withour install it
+
+Just enter on this site https://swish.swi-prolog.org/ and start using, on left side your base and at right bottom corner your queries, just click on "run" and the magic begins.
 
 Philosophy reference 
 
