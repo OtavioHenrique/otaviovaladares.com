@@ -219,7 +219,42 @@ Syntactically both queries and facts can look the same, but you can easily diffe
 
 ### The logical variables
 
-Unlike *facts* or *queries* variables isn't a statement, but we need to talk about too. 
+Unlike *facts* or *queries* variables isn't a statement, but we need to talk about too.
+
+Variables in Prolog is very different from other languages, they don't store a specific value at memory, so, the first step is to stop thinking that variables is to store values, not here. Variables in logic programming stand for a unspecified entity and the interpreter will try to instantiate the variables for us respecting the facts previously defined. Let's understand it better by example, imagine that you want to know who are William's children? 
+
+```erlang
+father(william, X).
+```
+
+*Remember, this is query context, not fact context.*
+
+The first thing we note at this query is that for the first time, we're using uppercase letter at `X`, this is because bariables in Prolog start with an uppercase letter. This query now has a variable, what's it means?
+
+If we run the previusly query, you'll get the fallowing result:
+
+```erlang
+X = george
+```
+
+Ok, Prolog has solved it for you, they found that William is the father of George, now he's telling you that, but.. William is father of more children and Prolog has returned only one, simple, when prolog is prompting something to you and your variable can have more than one result, you can press dot for end your query (signaling to Prolog that this answer is ok for you), or you press semicolon to go to the next answer (this doesn't works when Prolog found only one possible answer).
+
+```erlang
+?- father(william, X).
+X = george ;
+X = charlotte ;
+X = louis.
+```
+
+Now Prolog give to us all possibles value for X.
+
+This can looks very hard, but it isn't, when talking about *rules* this can looks more simple. One way to better understand what we're asking to Prolog is to read the query like:
+
+"Does there exist an X such that William is father of X?"
+
+### Rules
+
+
 
 ## Final Notes
 
@@ -236,7 +271,7 @@ Clauses of male/1 are not together in the source-file
 
 The problem is that our base is not grouped by facts, and Prolog encourages it. To solve this warning just group our facts.
 
-#### Execute prolog withour install it
+#### Execute prolog without install it
 
 Just enter on this site https://swish.swi-prolog.org/ and start using, on left side your base and at right bottom corner your queries, just click on "run" and the magic begins.
 
