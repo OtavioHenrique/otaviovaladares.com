@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Logic Programming"
-subtitle: "Programming by other point of vie"
+subtitle: "Programming by another point of view"
 date: 2018-08-12 13:10:00
 author: "Octos"
 header-img: "img/in-post/logic-programming/the-thinker.jpg"
@@ -356,7 +356,7 @@ true
 
 Proving why Prolog is called logic programming, and why it's based on formal logic, this example proves all.
 
-## Four color theorem
+## Solving Four color theorem
 
 The four color theorem is a nice example of something that would use a lot of lines to be completed in most common programming languages like Java or Python that in Prolog consume only a few lines of code.
 
@@ -364,7 +364,63 @@ The four color theorem is a theorem of mathematics. It says that in any plane su
 
 On this example, I'll paint the map of my country, Brazil. Brazil has 26 states and I think that's enough for this exercise.
 
-![Brazil map](https://www.destinationweddingdirectory.co/images/states-of-brazil.png)
+![Brazil map](https://s3.amazonaws.com/garagelabio/logic_programming/Estados-teste1+(1).png)
+
+To get started, the best thing to do is to define the facts, we can start defining the four colors of our map. What colors do you like? Choose four.
+
+```erlang
+color(black).
+color(byzantine).
+color(sapphire_blue).
+color(screamin green).
+```
+
+With colors of our map defined, it's time to define the rule of the problem, two adjacent states can't have the same color. We will need to use the `=/=` not equal operator.
+
+We'll create a rule that say "if two state are neighbors they don't have the same color"
+
+```erlang
+adjacent(state1Color, state2Color) :-
+    color(state1Color), color(state2Color),
+    state1Color =/= state2Color.
+```
+
+And now map all states that is adjacent between each other, defining a new rule called `brazil/27`.
+
+```erlang
+brazil(AC, AM, PA, RR, RO, AP, MT, MA, TO, GO, MS, DF, PI, 
+       CE, RN, PB, PE, AL, SE, BA, ES, MG, RJ, SP, PR, SC,
+       RS) :-
+    adjacent(AC, AM), adjacent(AC, RO),
+    adjacent(AM, RO), adjacent(AM, RR), adjacent(AM, PA), 
+    	adjacent(AM, MT),
+    adjacent(PA, RR). adjacent(PA, AP), adjacent(PA, MA),
+    	adjacent(PA, TO), adjacent(PA, MT),
+    adjacent(RO, MT),
+    adjacent(MT, TO), adjacent(MT, GO), adjacent(MT, MS),
+    adjacent(MA, PI), adjacent(MA, TO),
+    adjacent(TO, PI), adjacent(TO, BA), adjacent(TO, GO),
+    adjacent(GO, BA), adjacent(GO, MG), adjacent(GO, MS),  
+        adjacent(GO, DF),
+    adjacent(MS, MG), adjacent(MS, SP), adjacent(MS, PR)
+    adjacent(DF, MG),  
+    adjacent(PI, CE), adjacent(PI, PE), adjacent(PI, BA),
+    adjacent(CE, RN), adjacent(CE, PB), adjacent(CE, PE),
+    adjacent(RN, PB),
+    adjacent(PB, PE),
+    adjacent(PE, AL), adjacent(PE, BA),
+    adjacent(AL, SE), adjacent(AL, BA),
+    adjacent(SE, BA),
+    adjacent(BA, MG), adjacent(BA, ES),
+    adjacent(ES, MG), adjacent(ES, RJ), 
+    adjacent(MG, RJ), adjacent(MG, SP),
+    adjacent(RJ, SP),
+    adjacent(SP, PR), 
+    adjacent(PR, SC),
+    adjacent(SC, RS).
+```
+
+
 
 ## Final Notes
 
