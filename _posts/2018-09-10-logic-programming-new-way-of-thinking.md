@@ -1,19 +1,19 @@
 ---
-layout:       post
-title:        "Logic Programming"
-subtitle:     "Programming by other point of vie"
-date:         2018-08-12 13:10:00
-author:       "Octos"
-header-img:   "img/in-post/logic-programming/the-thinker.jpg"
-header-mask:  0.5
-catalog:      true
+layout: post
+title: "Logic Programming"
+subtitle: "Programming by other point of vie"
+date: 2018-08-12 13:10:00
+author: "Octos"
+header-img: "img/in-post/logic-programming/the-thinker.jpg"
+header-mask: 0.5
+catalog: true
 multilingual: true
 tags:
-    - Programming Languages
-    - Paradigm of Programming
-    - Logic Programming
-    - Prolog
-    - Theorical Content
+- Programming Languages
+- Paradigm of Programming
+- Logic Programming
+- Prolog
+- Theory
 ---
 
 Let’s talk about logic programming, I think everybody who completed the college or study computer science by yourself (like me), already have heard about logic programming, what it’s exactly? When talking about programming we have a lot of paradigms of programming languages and logic is one of them, but unfortunately isn’t very popular, to be sincere prolog is most used by academia. But don’t worry learn logic programming can be good to expand your knowledge and see the things from other perspectives, understanding a new paradigm of programming is a new way of thinking.
@@ -22,8 +22,8 @@ On this post, I'll talk about what I've liked on Prolog and how to get started.
 
 Warning:
 
-* I'm not an expert of Prolog 
-* This post doesn't have advanced content 
+* I'm not an expert of Prolog
+* This post doesn't have advanced content
 * Every example of this post will be written in Prolog
 * This post have a strong theorical content, if you don't like, feel free to jump to "First Steps" paragraph.
 
@@ -47,28 +47,28 @@ Propositions needs to follow the [Three Laws of Thought](https://oregonstate.edu
 
 * Law of Identity, A is A. Everything is the same as itself.
 * The Law of Noncontradiction, NOT ( A and not A) - Nothing can both exist and not exist at the same time and in the same respect; or no statement can be both true and false.
-* Law of Excluded Middle, EITHER (A or not A) - Something either exists or doesn’t exists; or every statement is either true or false.  
+* Law of Excluded Middle, EITHER (A or not A) - Something either exists or doesn’t exists, or every statement is either true or false.
 
-This reasoning process is often called syllogism (“conclusion, inference”), that is when you apply deductive reasoning to arrive at a conclusion based on two or more propositions that are asserted or assumed to be true. 
+This reasoning process is often called syllogism (“conclusion, inference”), that is when you apply deductive reasoning to arrive at a conclusion based on two or more propositions that are asserted or assumed to be true.
 
 The syllogism is basically one conclusion based on prepositions.
 
 When talking about syllogism, the most common example is the one given by Socrates.
 
-    All men are mortal.
-    Socrates is a man.
-    Therefore, Socrates is mortal.
+All men are mortal.
+Socrates is a man.
+Therefore, Socrates is mortal.
 
 Each syllogism consists of three parts:
 
-    Major premise
-    Minor premise
-    Conclusion
+Major premise
+Minor premise
+Conclusion
 
 
 Each part is a categorical proposition, and each categorical proposition contains two categorical terms. Each of the premises has one term in common with the conclusion: in a major premise, this is the major term, in a minor premise, this is the minor term. This is also called singular terms.
 
-Major premise:  All men are mortal.
+Major premise: All men are mortal.
 Minor premise: Socrates is a man.
 Conclusion: Therefore, Socrates is mortal.
 
@@ -80,11 +80,11 @@ This is a very large study and I know that’s not all to study about logic, if 
 
 ## What is Logic Programming?
 
-Most programmers at day to day work deal with imperative languages, the main characteristic of imperative languages is the way that you change the programs state giving a statement, step by step (How to). 
+Most programmers at day to day work deal with imperative languages, the main characteristic of imperative languages is the way that you change the programs state giving a statement, step by step (How to).
 
 Programs written in a logic programming languages, computation is dealing with relations rather than with single-valued functions, these relations are defined by a set of rules about some problem domain and these rules are written by the programmer, this concept leads us to one of the main characteristics of logic programming:
 
-"Logic programming is composed of two things, the logic and the control."   
+"Logic programming is composed of two things, the logic, and the control."
 
 The logic component is the definition of the problem while the control is more like the way to get the solution, the rules.
 
@@ -103,7 +103,7 @@ The name is a French abbreviation for "Programming in Logic".
 
 ## First Steps
 
-All the pilars of logic programming inherits from logic (that we studied above), terms and statements.
+All the pillars of logic programming inherits from logic (that we studied above), terms and statements.
 
 We've three basic statements: *Facts*, *Rules* and *Queries* and a single data structure called *Logical Term*
 
@@ -117,27 +117,27 @@ Fact is basically the relation the objects hold between each other:
 mother(elizabeth, charles).
 ```
 
-This is the most basic example of fact, it's hold the relation between Elizabeth and Charles an tell that this relation is mother. 
+This is the most basic example of the fact, it holds the relation between Elizabeth and Charles an tell that this relation is a mother.
 
 We say *atoms* to refer to the name of the things that the predicate is telling the relations, on this example, Elizabeth and Charles are both *atoms*.
 
 You can also speak *predicate*, *fact* and *predicate* means the same.
 
-*Note that both predicate and atoms start with lowercase letter, the reason we'll talk soon.*
+*Note that both predicate and atoms start with a lowercase letter, the reason we'll talk soon.*
 
-A set of facts can describe a situation or a series of relations, which will be used by Prolog to execute computations. 
+A set of facts can describe a situation or a series of relations, which will be used by Prolog to execute computations.
 
-In prolog you need to use dot to say that you finished your statement, don't forget the dot.
+In Prolog, you need to use dot to say that you finished your statement, don't forget the dot.
 
-With facts we can define simple relations, for example a family tree, this example is considered the "Hello World program of Prolog", and that's what we're going to do now.
+With facts we can define simple relations, for example, a family tree, this example is considered the "Hello World program of Prolog", and that's what we're going to do now.
 
-For this example, we'll use the left side of Britsh royal family tree. (We'll use only the left side because the entire tree is to big, and would escape the main goal of this text) 
+For this example, we'll use the left side of the Britsh royal family tree. (We'll use only the left side because the entire tree is too big, and would escape the main goal of this text)
 
 ![Left side of royal family tree](https://s3.amazonaws.com/garagelabio/logic_programming/royal_family_simple+(1).png)
 
-Ok, take a look at this tree, how many facts can we define? I think that we can define a lot of predicates, since parental relations till dates like birth or marriage. 
+Ok, take a look at this tree, how many facts can we define? I think that we can define a lot of predicates, since parental relations till dates like birth or marriage.
 
-To keep this example simple as possible, let's define only three, *mother*, *father*, *male/female*.
+To keep this example as simple as possible, let's define only three, *mother*, *father*, *male/female*.
 
 ```erlang
 female(elizabeth).
@@ -174,13 +174,13 @@ mother(catherine, louis).
 male(louis).
 ```
 
-A little bit big, right? Now imagine if we wrote all the facts about royal family, like dates, marriage, etc.
+A little bit big, right? Now imagine if we wrote all the facts about the royal family, like dates, marriage, etc.
 
-Now would be fabolous if we can consult these facts, would it?
+Now would be fabulous if we can consult these facts, would it?
 
 ### Queries
 
-Queries is the second form of statement in logic programs, they are the way of retrieve informations from facts. We can also speak *goal*.
+Queries is the second form of statement in logic programs, they are the way of retrieve information from facts. We can also speak *goal*.
 
 A query asks to Prolog what's the relation between objects, for example, we want to know if Charles is the father of William, just ask to prolog:
 
@@ -188,7 +188,7 @@ A query asks to Prolog what's the relation between objects, for example, we want
 ?- father(charles, william).
 ```
 
-*During this text everytime that you see `?-` before an statement is because we're working on query context.*
+*During this text everytime that you see `?-` before a statement is because we're working on query context.*
 
 And Prolog will return `true`, and it will return `false` with we ask something that's not true:
 
@@ -202,7 +202,7 @@ And Prolog will return `true`, and it will return `false` with we ask something 
 
 When working with simple problems like this, we usually load our prolog file into Prolog interpreter to start querying, assuming that you're using [SWI-prlog](http://www.swi-prolog.org/), you've two ways:
 
-* Start prolog shell using `swipl` and afther this load prolog file writing `consult('path/to/file.pl')`.
+* Start prolog shell using `swipl` and after this load prolog file writing `consult('path/to/file.pl')`.
 * Already loads `swipl` with your database, using `-s` option, for example: `swipl -s royal_family.pl`
 
 Some useful commands that can help you in your Prolog journey:
@@ -213,9 +213,9 @@ Some useful commands that can help you in your Prolog journey:
 * `assert(fact).` adds fact to your base.
 * `retract(fact).` removes fact of your base.
 
-Don't feel scared, this is like any REPL of any interpreted language.
+Don't feel scared, this is like any REPL of an interpreted language.
 
-This aspect of Prolog can look strange and make some people feel confused at the beginning, but don't worry.
+This aspect of Prolog can look strange and make some people feel confused at the beginning but don't worry.
 
 Syntactically both queries and facts can look the same, but you can easily differ by the context.
 
@@ -223,7 +223,7 @@ Syntactically both queries and facts can look the same, but you can easily diffe
 
 Unlike *facts* or *queries* variables isn't a statement, but we need to talk about too.
 
-Variables in Prolog is very different from other languages, they don't store a specific value at memory, so, the first step is to stop thinking that variables is to store values, not here. Variables in logic programming stand for a unspecified entity and the interpreter will try to instantiate the variables for us respecting the facts previously defined. Let's understand it better by example, imagine that you want to know who are William's children? 
+Variables in Prolog is very different from other languages, they don't store a specific value at is memory, so, the first step is to stop thinking that variables is to store values, not here. Variables in logic programming stand for an unspecified entity and the interpreter will try to instantiate the variables for us respecting the facts previously defined. Let's understand it better by example, imagine that you want to know who is William's children?
 
 ```erlang
 ?- father(william, X).
@@ -231,15 +231,15 @@ Variables in Prolog is very different from other languages, they don't store a s
 
 *Remember, this is query context, not fact context.*
 
-The first thing we note at this query is that for the first time, we're using uppercase letter at `X`, this is because bariables in Prolog start with an uppercase letter. This query now has a variable, what's it means?
+The first thing we note at this query is that for the first time, we're using uppercase letter at `X`, this is because variables in Prolog start with an uppercase letter. This query now has a variable, what's it means?
 
-If we run the previusly query, you'll get the fallowing result:
+If we run the previous query, you'll get the following result:
 
 ```erlang
 X = george
 ```
 
-Ok, Prolog has solved it for you, they found that William is the father of George, now he's telling you that, but.. William is father of more children and Prolog has returned only one, simple, when prolog is prompting something to you and your variable can have more than one result, you can press dot for end your query (signaling to Prolog that this answer is ok for you), or you press semicolon to go to the next answer (this doesn't works when Prolog found only one possible answer).
+Ok, Prolog has solved it for you, they found that William is the father of George, now he's telling you that, but... William is father of more children and Prolog has returned only one, simple, when Prolog is promoting something to you and your variable can have more than one result, you can press dot for end your query (signaling to Prolog that this answer is ok for you), or you press semicolon to go to the next answer (this doesn't work when Prolog found only one possible answer).
 
 ```erlang
 ?- father(william, X).
@@ -248,33 +248,33 @@ X = charlotte ;
 X = louis.
 ```
 
-Prolog give to us all possibles value for X.
+Prolog gives to us all possibles value for X.
 
-This can looks very hard, but it isn't, when talking about *rules* this can looks more simple. One way to better understand what we're asking to Prolog is to read the query like:
+This can look very hard, but it isn't, when talking about *rules* this can look more simple. One way to better understand what we're asking to Prolog is to read the query like:
 
 "Does there exist an X such that William is father of X?"
 
 ### Rules
 
-Rules is the third and the most important statement of Prolog.  
+Rules are the third and the most important statement of Prolog.
 
-Rules is the way of define patterns/rules to Prolog make decisions based on facts previus defined. Let's think about, on our base we've all the information about father, moms and sex. We're humans and if our intelligence we can make conclusions based on these facts, Prolog can make conclusions too, but we need to teach how to make these conclusions. 
+Rules are the way of define patterns/rules to Prolog make decisions based on facts previously defined. Let's think about, on our base we've all the information about father, moms, and sex. We're humans and if our intelligence we can make conclusions based on these facts, Prolog can make conclusions too, but we need to teach how to make these conclusions.
 
 For example, we can define who is grandparents of each other, right? What is the rule for define grandparent?
 
 ![Grandparents Rules](https://s3.amazonaws.com/garagelabio/logic_programming/grandparents_rule.png)
 
-The rule is simple, for someone be your grandfather, he needs to be father of your father, right? How do we define that in Prolog? Simple, we create a rule, it will be called `grandfather`.
+The rule is simple, for someone be your grandfather, he needs to be the father of your father, right? How do we define that in Prolog? Simple, we create a rule, it will be called `grandfather`.
 
 ```erlang
-grandfather(X, Y) :- 
-    father(X, Z),
-    father(Z, Y). 
+grandfather(X, Y) :-
+father(X, Z),
+father(Z, Y).
 ```
 
 We can read this rule like this:
 
-*For all `X`,`Y`.   `X` is the grandfather of `Y`, if `X` is the father of `Z` and `Z` is the father of `Y`.*
+*For all `X`,`Y`. `X` is the grandfather of `Y`, if `X` is the father of `Z` and `Z` is the father of `Y`.*
 
 Now if we reload our base at Prolog interpreter, we can use our new rule! Let's try it:
 
@@ -285,31 +285,31 @@ X = charles.
 
 Nice, we have found Louis grandfather and it's Charles. How our rule behaved when we asked who is the grandfather of Louis?
 
-First of step, Louis on our rule is the `Y`, so every `Y` becomes louis.
+First, of step, Louis on our rule is the `Y`, so every `Y` becomes louis.
 
 ```erlang
-grandfather(X, luis) :- 
-    father(X, Z),
-    father(Z, louis). 
+grandfather(X, luis) :-
+father(X, Z),
+father(Z, louis).
 ```
 
-Second step, solve `father(Z, louis).` and found that `Z = william`.
+The second step, solve `father(Z, louis).` and found that `Z = william`.
 
 ```erlang
-grandfather(X, luis) :- 
-    father(X, william),
-    father(william, louis). 
+grandfather(X, luis) :-
+father(X, william),
+father(william, louis).
 ```
 
-Last step, now fallowing your defined rule, we need to solve `father(X, william).` to find who is the grandfather of Louis, the answer is `X = charles`, and we have found our goal.
+The last step, now fallowing your defined rule, we need to solve `father(X, william).` to find who is the grandfather of Louis, the answer is `X = charles`, and we have found our goal.
 
 ```erlang
-grandfather(charles, luis) :- 
-    father(charles, william),
-    father(william, louis). 
+grandfather(charles, luis) :-
+father(charles, william),
+father(william, louis).
 ```
 
-It's not that hard, right? The most interesenting thing about this rule, is that it can find grandchildren too, just replace X by the name of grandfather and find all grandchildrens:
+It's not that hard, right? The most interesting thing about this rule is that it can find grandchildren too, just replace X by the name of grandfather and find all grandchildren:
 
 ```erlang
 ?- grandfather(philip, Y).
@@ -317,32 +317,32 @@ Y = william,
 Y = harry
 ```
 
-And obviusly, we can make assertions without variables:
+And obviously, we can make assertions without variables:
 
 ```erlang
 ?- grandfather(philip, william).
 true
 ```
 
-You can use one rule to define another rule, for example you can use `grandfather/2` rule, inside the `great-grandfather` rule.
+You can use one rule to define another rule, for example, you can use `grandfather/2` rule, inside the `great-grandfather` rule.
 
 ```erlang
 greatgrandfather(X, Y) :-
-    father(X, Z),
-    grandfather(Z, Y).
+father(X, Z),
+grandfather(Z, Y).
 ```
 
 With this power, you actually can build nice things using logic programming.
 
 ---
 
-Now we know the three statement of logic programming, and solved the most basic exercise of Prolog, the "family tree", this problem as I said, is like the "hello world" of prolog.
+Now we know the three statement of logic programming, and solved the most basic exercise of Prolog, the "family tree", this problem as I said, is like the "hello world" of Prolog.
 
-With our current knowledge, we can rewrite the most famous example of syllogism that we discussed above in Prolog:
+With our current knowledge, we can rewrite the most famous example of a syllogism that we discussed above in Prolog:
 
-    All men are mortal.
-    Socrates is a man.
-    Therefore, Socrates is mortal.
+All men are mortal.
+Socrates is a man.
+Therefore, Socrates is mortal.
 
 ```erlang
 mortal(X) :- man(X).
@@ -356,9 +356,15 @@ true
 
 Proving why Prolog is called logic programming, and why it's based on formal logic, this example proves all.
 
-### Four color theorem
+## Four color theorem
 
+The four color theorem is a nice example of something that would use a lot of lines to be completed in most common programming languages like Java or Python that in Prolog consume only a few lines of code.
 
+The four color theorem is a theorem of mathematics. It says that in any plane surface with regions in it (people think of them as maps), the regions can be colored with no more than four colors. Two regions that have a common border must not get the same color. They are called adjacent (next to each other) if they share a segment of the border, not just a point. [Interested? Read more about it here.](https://simple.wikipedia.org/wiki/Four_color_theorem)
+
+On this example, I'll paint the map of my country, Brazil. Brazil has 26 states and I think that's enough for this exercise.
+
+![Brazil map](https://www.destinationweddingdirectory.co/images/states-of-brazil.png)
 
 ## Final Notes
 
@@ -368,18 +374,18 @@ When you load the royal family prolog file at interpreter you'll get a punch of 
 
 ```
 Clauses of male/1 are not together in the source-file
-	  Earlier definition at /home/otavio/Documents/prolog/royal_family.pl:2
-	  Current predicate: mother/2
-	  Use :- discontiguous male/1. to suppress this message
+     Earlier definition at /home/otavio/Documents/prolog/royal_family.pl:2
+     Current predicate: mother/2
+     Use :- discontiguous male/1. to suppress this message
 ```
 
 The problem is that our base is not grouped by facts, and Prolog encourages it. To solve this warning just group our facts.
 
-#### Execute prolog without install it
+#### Execute prolog without installing it
 
-Just enter on this site https://swish.swi-prolog.org/ and start using, on left side your base and at right bottom corner your queries, just click on "run" and the magic begins.
+Just enter on this site https://swish.swi-prolog.org/ and start using, on the left side your base and at right bottom corner your queries, just click on "run" and the magic begins.
 
-Philosophy reference 
+Philosophy reference
 
 https://en.wikipedia.org/wiki/Term_logic
 https://en.wikipedia.org/wiki/Syllogism#cite_note-11
