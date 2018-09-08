@@ -53,7 +53,7 @@ This reasoning process is often called syllogism (“conclusion, inference”), 
 
 The syllogism is basically one conclusion based on prepositions.
 
-When talking about syllogism, the most common example is the one given by Aristotle.
+When talking about syllogism, the most common example is the one given by Socrates.
 
     All men are mortal.
     Socrates is a man.
@@ -93,7 +93,7 @@ where "Logic" represents a logic program and "Control" represents different theo
 
 Logic programming is a type of programming paradigm which is largely based on formal logic, that's more like "What is", with you asking the computer for answers, it is known as "declarative programming".
 
-So, in a simple conclusion logic programming is much like telling the system the problem, the rules based on formal logic, and asking for the answer (declarative) than giving a step by step instructions to solve the problem.
+So, in a simple conclusion, logic programming is much like telling the system the problem, the rules based on formal logic, the facts, and asking for the answer (declarative) than giving a step by step instructions to solve the problem.
 
 ## What is Prolog?
 
@@ -185,13 +185,15 @@ Queries is the second form of statement in logic programs, they are the way of r
 A query asks to Prolog what's the relation between objects, for example, we want to know if Charles is the father of William, just ask to prolog:
 
 ```erlang
-father(charles, william).
+?- father(charles, william).
 ```
+
+*During this text everytime that you see `?-` before an statement is because we're working on query context.*
 
 And Prolog will return `true`, and it will return `false` with we ask something that's not true:
 
 ```erlang
-father(diana, william).
+?- father(diana, william).
 ```
 
 *One nice trick is to think like we're asking a question, and Prolog will respond based on facts that it already knows, this is possible because we're working with declarative programming.*
@@ -224,7 +226,7 @@ Unlike *facts* or *queries* variables isn't a statement, but we need to talk abo
 Variables in Prolog is very different from other languages, they don't store a specific value at memory, so, the first step is to stop thinking that variables is to store values, not here. Variables in logic programming stand for a unspecified entity and the interpreter will try to instantiate the variables for us respecting the facts previously defined. Let's understand it better by example, imagine that you want to know who are William's children? 
 
 ```erlang
-father(william, X).
+?- father(william, X).
 ```
 
 *Remember, this is query context, not fact context.*
@@ -246,13 +248,115 @@ X = charlotte ;
 X = louis.
 ```
 
-Now Prolog give to us all possibles value for X.
+Prolog give to us all possibles value for X.
 
 This can looks very hard, but it isn't, when talking about *rules* this can looks more simple. One way to better understand what we're asking to Prolog is to read the query like:
 
 "Does there exist an X such that William is father of X?"
 
 ### Rules
+
+Rules is the third and the most important statement of Prolog.  
+
+Rules is the way of define patterns/rules to Prolog make decisions based on facts previus defined. Let's think about, on our base we've all the information about father, moms and sex. We're humans and if our intelligence we can make conclusions based on these facts, Prolog can make conclusions too, but we need to teach how to make these conclusions. 
+
+For example, we can define who is grandparents of each other, right? What is the rule for define grandparent?
+
+![Grandparents Rules](https://s3.amazonaws.com/garagelabio/logic_programming/grandparents_rule.png)
+
+The rule is simple, for someone be your grandfather, he needs to be father of your father, right? How do we define that in Prolog? Simple, we create a rule, it will be called `grandfather`.
+
+```erlang
+grandfather(X, Y) :- 
+    father(X, Z),
+    father(Z, Y). 
+```
+
+We can read this rule like this:
+
+*For all `X`,`Y`.   `X` is the grandfather of `Y`, if `X` is the father of `Z` and `Z` is the father of `Y`.*
+
+Now if we reload our base at Prolog interpreter, we can use our new rule! Let's try it:
+
+```erlang
+?- grandfather(X, louis).
+X = charles.
+```
+
+Nice, we have found Louis grandfather and it's Charles. How our rule behaved when we asked who is the grandfather of Louis?
+
+First of step, Louis on our rule is the `Y`, so every `Y` becomes louis.
+
+```erlang
+grandfather(X, luis) :- 
+    father(X, Z),
+    father(Z, louis). 
+```
+
+Second step, solve `father(Z, louis).` and found that `Z = william`.
+
+```erlang
+grandfather(X, luis) :- 
+    father(X, william),
+    father(william, louis). 
+```
+
+Last step, now fallowing your defined rule, we need to solve `father(X, william).` to find who is the grandfather of Louis, the answer is `X = charles`, and we have found our goal.
+
+```erlang
+grandfather(charles, luis) :- 
+    father(charles, william),
+    father(william, louis). 
+```
+
+It's not that hard, right? The most interesenting thing about this rule, is that it can find grandchildren too, just replace X by the name of grandfather and find all grandchildrens:
+
+```erlang
+?- grandfather(philip, Y).
+Y = william,
+Y = harry
+```
+
+And obviusly, we can make assertions without variables:
+
+```erlang
+?- grandfather(philip, william).
+true
+```
+
+You can use one rule to define another rule, for example you can use `grandfather/2` rule, inside the `great-grandfather` rule.
+
+```erlang
+greatgrandfather(X, Y) :-
+    father(X, Z),
+    grandfather(Z, Y).
+```
+
+With this power, you actually can build nice things using logic programming.
+
+---
+
+Now we know the three statement of logic programming, and solved the most basic exercise of Prolog, the "family tree", this problem as I said, is like the "hello world" of prolog.
+
+With our current knowledge, we can rewrite the most famous example of syllogism that we discussed above in Prolog:
+
+    All men are mortal.
+    Socrates is a man.
+    Therefore, Socrates is mortal.
+
+```erlang
+mortal(X) :- man(X).
+man(socrates).
+
+...
+
+? - mortal(socrates).
+true
+```
+
+Proving why Prolog is called logic programming, and why it's based on formal logic, this example proves all.
+
+### Four color theorem
 
 
 
