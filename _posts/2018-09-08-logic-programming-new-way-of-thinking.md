@@ -2,8 +2,8 @@
 layout: post
 title: "Logic Programming"
 subtitle: "Programming by another point of view"
-date: 2018-08-12 13:10:00
-author: "Octos"
+date: 2018-09-08 22:28:00
+author: "Otavio Valadares"
 header-img: "img/in-post/logic-programming/the-thinker.jpg"
 header-mask: 0.5
 catalog: true
