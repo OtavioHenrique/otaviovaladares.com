@@ -37,6 +37,8 @@ Let’s go back to our high school and talk about mid 350 B.C, Aristotle the Anc
 
 ### Aristotle
 
+*Warning: If you want only the hands-on part, stop here and go to "First Steps"*
+
 Aristotle's logical work is collected in the six texts that are collectively known as the Organon. Two of these texts in particular, namely the Prior Analytics and De Interpretatione, contain the heart of Aristotle's treatment of judgments and formal inference, and it is principally this part of Aristotle's works that is about term logic.
 
 ![Aristotle](https://s3.amazonaws.com/garagelabio/logic_programming/aristotle.jpeg)
@@ -65,15 +67,9 @@ Major premise
 Minor premise
 Conclusion
 
-Each part is a categorical proposition, and each categorical proposition contains two categorical terms. Each of the premises has one term in common with the conclusion: in a major premise, this is the major term, in a minor premise, this is the minor term. This is also called singular terms.
+In the rest of this text you'll learn that prolog can do that, based on fact and rules.
 
-Major premise: All men are mortal.
-Minor premise: Socrates is a man.
-Conclusion: Therefore, Socrates is mortal.
-
-The premises also have one term in common with each other, which is known as the middle term; in this example, man.
-
-This is a very large study and I know that’s not all to study about logic, if you like this topic stay studying it, but I think that is the necessity to understand the principles of logic programming, now that we remember (or learned) what is logic, let’s talk about logic programming.
+This is only a simple resume of what is logic and syllogism, if you felt interested, you can continue studying by yourself.
 
 “Logic is an instrument for advancing knowledge"
 
@@ -87,8 +83,13 @@ Programs written in a logic programming languages, computation is dealing with r
 
 The logic component is the definition of the problem while the control is more like the way to get the solution, the rules.
 
+We can define a logic programming algorithm by the fallowing formula:
+
 *Algorithm = Logic + Control*
-where "Logic" represents a logic program and "Control" represents different theorem-proving strategies.
+
+*Where "Logic" represents a logic program and "Control" represents different theorem-proving strategies.*
+
+---
 
 Logic programming is a type of programming paradigm which is largely based on formal logic, that's more like "What is", with you asking the computer for answers, it is known as "declarative programming".
 
@@ -339,9 +340,9 @@ Now we know the three states of logic programming, and solved the most basic exe
 
 With our current knowledge, we can rewrite the most famous example of a syllogism that we discussed above in Prolog:
 
-All men are mortal.
-Socrates is a man.
-Therefore, Socrates is mortal.
+    All men are mortal.
+    Socrates is a man.
+    Therefore, Socrates is mortal.
 
 ```erlang
 mortal(X) :- man(X).
@@ -352,8 +353,6 @@ man(socrates).
 ? - mortal(socrates).
 true
 ```
-
-Proving why Prolog is called logic programming, and why it's based on formal logic, this example proves all.
 
 ## Solving Four color theorem
 
@@ -410,7 +409,9 @@ If we paint our map again based on Prolog output
 
 ![Colored Map](https://s3.amazonaws.com/garagelabio/logic_programming/COLORED_MAP.png)
 
-And the problem is done.
+And the problem is done, you can replicate this problem to every map and we'll have a correct answer.
+
+One courious think about this problem, is that it was the first major theorem to be proved using a computer.z
 
 ## Final Notes
 
