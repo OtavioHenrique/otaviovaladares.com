@@ -67,7 +67,7 @@ Major premise
 Minor premise
 Conclusion
 
-In the rest of this text you'll learn that prolog can do that, based on fact and rules.
+In the rest of this text, you'll learn that Prolog can do that, based on fact and rules.
 
 This is only a simple resume of what is logic and syllogism, if you felt interested, you can continue studying by yourself.
 
@@ -83,7 +83,7 @@ Programs written in a logic programming languages, computation is dealing with r
 
 The logic component is the definition of the problem while the control is more like the way to get the solution, the rules.
 
-We can define a logic programming algorithm by the fallowing formula:
+We can define a logic programming algorithm by the following formula:
 
 *Algorithm = Logic + Control*
 
@@ -141,38 +141,31 @@ To keep this example as simple as possible, let's define only three, *mother*, *
 
 ```erlang
 female(elizabeth).
-male(philip).
-
-father(philip, charles).
-mother(elizabeth, charles).
-
-male(charles).
-
-father(charles, william).
-mother(diana, william).
-
-male(william).
-
-father(charles, harry).
-mother(diana, harry).
-
-male(harry).
-
-father(william, george).
-mother(catherine, george).
-
-male(george).
-
-father(william, charlotte).
-mother(catherine, charlotte).
-
 female(charlotte).
 
-father(william, louis).
-mother(catherine, louis).
-
+male(philip).
+male(harry).
+male(george).
 male(louis).
+male(charles).
+male(william).
+
+father(philip, charles).
+father(charles, william).
+father(charles, harry).
+father(william, george).
+father(william, charlotte).
+father(william, louis).
+
+mother(elizabeth, charles).
+mother(diana, william).
+mother(diana, harry).
+mother(catherine, george).
+mother(catherine, charlotte).
+mother(catherine, louis).
 ```
+
+*You can download this facts [at this gist](https://gist.github.com/OtavioHenrique/bbbfdeb93de55fe36ff9d20eacd7d627)*
 
 A little bit big, right? Now imagine if we wrote all the facts about the royal family, like dates, marriage, etc.
 
@@ -340,9 +333,9 @@ Now we know the three states of logic programming, and solved the most basic exe
 
 With our current knowledge, we can rewrite the most famous example of a syllogism that we discussed above in Prolog:
 
-    All men are mortal.
-    Socrates is a man.
-    Therefore, Socrates is mortal.
+All men are mortal.
+Socrates is a man.
+Therefore, Socrates is mortal.
 
 ```erlang
 mortal(X) :- man(X).
@@ -411,42 +404,80 @@ If we paint our map again based on Prolog output
 
 And the problem is done, you can replicate this problem to every map and we'll have a correct answer.
 
-One courious think about this problem, is that it was the first major theorem to be proved using a computer.z
+One courious think about this problem, is that it was the first major theorem to be proved using a computer.
 
-## Final Notes
+## My conclusion about logic programming
 
-#### Warnings while loading family tree on interpreter
+On the last months I've been studying logic programming and I'm loved it, it opened the doors for a new way of thinking and the way of logic programming works has fascinated me.
 
-When you load the royal family prolog file at interpreter you'll get a bunch of warnings, like this:
+Unfortunately, as I said, my feeling is that logic programming and Prolog is most used in academia, when I search for big cases of use, I don't find many things.
 
-```
-Clauses of male/1 are not together in the source-file
-Earlier definition at /home/otavio/Documents/prolog/royal_family.pl:2
-Current predicate: mother/2
-Use :- discontiguous male/1. to suppress this message
-```
+It's very funny to solve a lot of problems like four color theorem or N-queens problem using Prolog, I think Prolog shines on that kind of problem, I tried to build an API using prolog, it's possible, but it very complex, it's not a thing that you'll choose over tradional languages.
 
-The problem is that our base is not grouped by facts, and Prolog encourages it. To solve this warning just group our facts.
+The best thing in Prolog that gained my attention is the capacity of query over the database of facts, for me, it's incredible how prolog solve and express queries, on this cases, Prolog for me is very straightforward and powerful.
 
-#### Execute prolog without installing it
+My conclusion is that Prolog is worth learning to open your mind and learn new things, the documentation is good and community too.
+
+## What's next?
+
+If you felt interested in Prolog, you can continue studying by a lot of ways, while writing this post, I was reading [Art Of Prolog](https://www.amazon.com/Art-Prolog-Second-Programming-Techniques/dp/0262193388) and it was very good. At internet you can find a lot of excelent tutorials, and at official site of SWI-Prolog you can find the documentation and tutorials.
+
+Here's my list of interesting resources to keep studying Prolog:
+
+[Art Of Prolog](https://www.amazon.com/Art-Prolog-Second-Programming-Techniques/dp/0262193388)
+
+[Excelent Tutorial]((https://dev.to/matchilling/introduction-to-logic-programming-with-prolog-cdh))
+
+[Another good post](https://bernardopires.com/2013/10/try-logic-programming-a-gentle-introduction-to-prolog/)
+
+[SWI-Prolog official site with a lot of tutorials](http://www.swi-prolog.org/)
+
+[Portal with three excelent courses of Prolog](https://edu.swi-prolog.org)
+
+[Prolog reddit to discuss](https://www.reddit.com/r/prolog/)
+
+[Real World Programming in SWI-Prolog](http://www.pathwayslms.com/swipltuts/index.html)
+
+[Web application in Prolog](http://www.pathwayslms.com/swipltuts/html/index.html)
+
+[Nice ruby talk](https://www.youtube.com/watch?v=hEOVcLAPRG8)
+
+## Final thought
+
+I'm glad if I helped you understand Prolog or remember it, I hope you enjoyed.
+
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
+
+## Appendix
+
+#### Execute Prolog without installing it
 
 Just enter on this site https://swish.swi-prolog.org/ and start using, on the left side your base and at right bottom corner your queries, just click on "run" and the magic begins.
 
+#### Reference / Useful Links
+
 Philosophy reference
 
-https://en.wikipedia.org/wiki/Term_logic
-https://en.wikipedia.org/wiki/Syllogism#cite_note-11
-https://pt.wikipedia.org/wiki/L%C3%B3gica_aristot%C3%A9lica
-https://en.wikipedia.org/wiki/Law_of_noncontradiction
-https://en.wikipedia.org/wiki/Law_of_excluded_middle
-https://en.wikipedia.org/wiki/Law_of_identity
-https://oregonstate.edu/instruct/phl201/modules/Philosophers/Aristotle/aristotle_syllogisms.html
-https://en.wikipedia.org/wiki/Law_of_thought#The_three_traditional_laws
+[Term Logic](https://en.wikipedia.org/wiki/Term_logic)
+
+[Syllogism](https://en.wikipedia.org/wiki/Syllogism)
+
+[Law_of_noncontradiction](https://en.wikipedia.org/wiki/Law_of_noncontradiction)
+
+[Law_of_excluded_middle](https://en.wikipedia.org/wiki/Law_of_excluded_middle)
+
+[Law_of_identity](https://en.wikipedia.org/wiki/Law_of_identity)
+
+[Aristotle Syllogisms](https://oregonstate.edu/instruct/phl201/modules/Philosophers/Aristotle/aristotle_syllogisms.html)
+
+[The_three_traditional_laws](https://en.wikipedia.org/wiki/Law_of_thought#The_three_traditional_laws)
 
 Logic Programming Reference
 
-file:///home/otavio/Documents/prolog-palazzo.pdf
-https://en.wikipedia.org/wiki/Logic_programming#Logic_and_control
-https://dev.to/matchilling/introduction-to-logic-programming-with-prolog-cdh
-http://sarabander.github.io/sicp/html/4_002e4.xhtml#g_t4_002e4
-https://en.wikipedia.org/wiki/Imperative_programming
+[Logic_programming](https://en.wikipedia.org/wiki/Logic_programming#Logic_and_control)
+
+[Beautiful post about Prolog](https://dev.to/matchilling/introduction-to-logic-programming-with-prolog-cdh)
+
+[SICP chapter about logic programming](http://sarabander.github.io/sicp/html/4_002e4.xhtml#g_t4_002e4)
+
+[Imperative_programming](https://en.wikipedia.org/wiki/Imperative_programming)
