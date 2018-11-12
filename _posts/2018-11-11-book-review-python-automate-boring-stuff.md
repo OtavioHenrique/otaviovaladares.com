@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "Automate the boring stuff with Python review"
-subtitle: "Week Diary of 2018-10-15 2018-10-22"
+subtitle: "The book review of Automate the boring stuff with Python"
 date: 2018-11-11 11:34:00
 author: "Otavio Valadares"
-header-img: "img/in-post/weekly/week1.jpg"
+header-img: "img/in-post/book-review-python-automate-boring-stuff/bf.jpg"
 header-mask: 0.5
 catalog: true
 multilingual: true
 tags:
 - Python
 - Book Review
+- Opinion
 ---
 
 A few weeks ago I finished reading "Automate the boring stuff with Python" from Al Sweigart, on this review I'll try to make a good review of the book and talk about the main chapters.
@@ -18,6 +19,8 @@ A few weeks ago I finished reading "Automate the boring stuff with Python" from 
 It's a book recommended for novices, for me, it's a good book for beginners, but for people who already know how to program in other dynamic and interpreted programming language, I think is not necessary to read this book, go ahead an read something more advanced.
 
 TL;DR: If you know how to program in another interpreted programming language like Ruby, go ahead and read something more advanced, if you are a beginner, start with this book, it's a very good book to start coding.
+
+If you want to know more about this book, you can check here: https://automatetheboringstuff.com/
 
 ## Print / Publisher
 
@@ -32,6 +35,8 @@ The book publisher is the famous [no starch press](https://nostarch.com/), that 
 And much more, I think every experienced programmer knows nostarch very well because they have a lot of famous and good books, if you are a beginner, you can trust them.
 
 I didn't have the physical edition of this book, I've read the digital edition on my Kindle Paperwhite, read technical books on digital readers is always it's always a fear because some books don't look good at the small screens, especially the code snippets, but this was not the problem of this book, I think large publishers like nostarch or O'Reilly you'll never going to have this problem.
+
+![Digital book on my Kindle Paperwhite](https://s3.amazonaws.com/garagelabio/book-review-automate-boring-stuff/bf.jpg)
 
 The physical edition I think should be excellent too, because I have other books from nostarch and no one disappointed me.
 
@@ -49,6 +54,8 @@ The only bad thing on this book is that this is a simple book for people that al
 
 ## Final thoughts
 
-It wasn't a very long post, and it's purposeful, I don't have much to talk about neovim yet, the objective of this post It only talks about how I migrate from vim to neovim. On next weeks I'll write about my plugins and describing some tricks of my vim/nvim configs.
+This is my first book review and I'll try to get better on the next review posts, I'll try to review every technical book that I read.
+
+If you want to know more about this book, you can check here: https://automatetheboringstuff.com/
 
 If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
