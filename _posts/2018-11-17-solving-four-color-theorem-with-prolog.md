@@ -146,4 +146,4 @@ MG = screamin_green
 
 After some minutes painting our map, I got:
 
-![Brazil map colored with four color](https://s3.amazonaws.com/garagelabio/four-color-theorem-with-prolog/brazil_states.png)
+![Brazil map colored with four color](https://s3.amazonaws.com/garagelabio/four-color-theorem-with-prolog/br_colored_four_color.jpg)
