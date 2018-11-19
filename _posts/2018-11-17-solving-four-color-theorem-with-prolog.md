@@ -22,6 +22,8 @@ How many different colors you think are sufficient to color a map considering th
 
 *"In mathematics, the four color theorem, or the four color map theorem, states that, given any separation of a plane into contiguous regions, producing a figure called a map, no more than four colors are required to color the regions of the map so that no two adjacent regions have the same color. Adjacent means that two regions share a common boundary curve segment, not merely a corner where three or more regions meet."*
 
+A good curiosity is that four color theorem can only be proved by computers.
+
 Example:
 
 ![Four color theorem example](https://s3.amazonaws.com/garagelabio/four-color-theorem-with-prolog/four_color_example.png)
