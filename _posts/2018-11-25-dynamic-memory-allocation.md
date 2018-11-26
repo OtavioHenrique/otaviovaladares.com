@@ -19,7 +19,7 @@ A few months ago, I started a series of posts about important topics of C progra
 
 ## Types of Allocation
 
-### Automatic Memory Allocation
+#### Automatic Memory Allocation
 
 Automatic memory allocation corresponds to the automatic variables, also known as "stack" memory, it's memory allocated at runtime when you enter into a new scope, each time that a function is called its auto variables are pushed to stack.
 What it really means? An auto variable is every variable that you declare and don't use any keyword (like `static`), simplifying, variables that you declare inside your `main` function or inside any function can be considered auto variables, therefore, automatic memory allocation.
@@ -65,7 +65,7 @@ if (a < b) {
 
 The lifetime of automatic variables is only during the execution of its scope/block, when the function/block is called the variable is pushed to stack and start your life, after the end of the function/block it is pushed out of the stack and doesn't exists anymore.
 
-```
+```c
 void anyThing() {
     int autoVariable = 10;
 
@@ -82,9 +82,23 @@ It can looks obvious to majority of programmers but I think that few ask themsel
 
 Summarize of auto variables: Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
 
-### Static Memory Allocation
+#### Static Memory Allocation
 
+## Links
 
+https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
+https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation
+https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation
+https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Usage_example
+http://mpatrol.sourceforge.net/doc/Static-memory-allocations.html
+https://www.tutorialspoint.com/cprogramming/c_arrays.htm
+https://stackoverflow.com/questions/11720079/how-can-i-see-the-size-of-files-and-directories-in-linux
+https://www.geeksforgeeks.org/static-variables-in-c/
+https://www.geeksforgeeks.org/memory-layout-of-c-program/
+https://github.com/EdmundKorley/libfree/wiki/memory-layout-of-c-programs
+https://www.programiz.com/c-programming/c-arrays
+http://fractallambda.com/2014/10/30/Dynamic-Static-and-Automatic-memory.html
+https://www.includehelp.com/c/difference-between-automatic-auto-and-static-variables.aspx
 
 ## Final thought
 
