@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "Dynamic Memory Allocation, a brief view"
+title:        "Types of Memory Allocation, a brief view"
 subtitle:     "Understanding the basics"
 date:         2018-11-25 01:10:00
 author:       "Octos"
@@ -22,10 +22,14 @@ A few months ago, I started a series of posts about important topics of C progra
 #### Automatic Memory Allocation
 
 Automatic memory allocation corresponds to the automatic variables, also known as "stack" memory, it's memory allocated at runtime when you enter into a new scope, each time that a function is called its auto variables are pushed to stack.
+
+*Worried because you don't know what is stack, don't panic, this will be explained on the next topic.*
+
 What it really means? An auto variable is every variable that you declare and don't use any keyword (like `static`), simplifying, variables that you declare inside your `main` function or inside any function can be considered auto variables, therefore, automatic memory allocation.
 
 ```c
 #include <stdio.h>
+
 
 int main() {
     int a = 1;
@@ -43,6 +47,7 @@ This example is the same as the previous:
 
 ```c
 #include <stdio.h>
+
 
 int main() {
     auto int a = 1;
@@ -63,7 +68,7 @@ if (a < b) {
 }
 ```
 
-The lifetime of automatic variables is only during the execution of its scope/block, when the function/block is called the variable is pushed to stack and start your life, after the end of the function/block it is pushed out of the stack and doesn't exists anymore.
+The lifetime of automatic variables is only during the execution of its scope/block, when the function/block is called the variable is pushed to stack and start your life, after the end of the function/block it is popped off of the stack and doesn't exists anymore.
 
 ```c
 void anyThing() {
@@ -78,11 +83,50 @@ int main() {
 }
 ```
 
-It can looks obvious to majority of programmers but I think that few ask themselves about why it occurs.
+*It can looks obvious to majority of programmers but I think that few ask themselves about why it occurs.*
 
-Summarize of auto variables: Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
+Summarize: Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
 
 #### Static Memory Allocation
+
+Static variables is other type of variables and memory allocation, the major difference is that it preserve its value and are not created/destroyed each time that your program execute a function. It corresponds to file scope variables and local static variables, their lifetime is the lifetime of the program.
+
+To declare a static variable, the only thing that you need to do is to use `static` keyword, like the fallowing example:
+
+```c
+static int age = 18;
+```
+
+This characteristic can be used to do interesting things, the variable is not destroyed when your software get out of the scope, so you can use it to count how many times one function is called, this is the most popular example of static variables:
+
+```c
+#include <stdio.h>
+
+
+void count() {
+    static int counter = 0;
+    counter++;
+    printf("Counter = %d\n", counter);
+}
+
+int main() {
+    count();
+    count();
+    count();
+    count();
+    return 0;
+}
+```
+
+The scope of a static variable is the scope of the function, the only difference is that they aren't destroyed on the final of the function call, if you try to access a static variable outside of its scope you'll get compilation error.
+
+They are allocated on compile time that fixes their addresses and sizes (so, the executable of the software already have the location and size of these variables), the name "static" is because they do not vary in location or size during the lifetime of the program (because the compiler already fixed it at executable).
+
+It's important to know that they aren't stored at stack like automatic allocation, or at the heap (like the dynamic allocation that we'll see bellow), this kind of variable are stored in the data segment of the programs address space if the are initialized or the BSS segment if they aren't initialized.
+
+*Worried because you don't know what is BSS/Data Segment/Stack/Heap? Don't panic, this will be explained on the next topic.*
+
+
 
 ## Links
 
