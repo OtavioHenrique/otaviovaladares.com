@@ -80,6 +80,8 @@ void anyThing() {
 int main() {
     anyThing();
     /* The variable autoVariable doesn't existis here, it only exists inside its function*/
+
+    return 0;
 }
 ```
 
@@ -89,7 +91,7 @@ Summarize: Every variable declared without any keyword(or `auto` keyword) at any
 
 #### Static Memory Allocation
 
-Static variables is other type of variables and memory allocation, the major difference is that it preserve its value and are not created/destroyed each time that your program execute a function. It corresponds to file scope variables and local static variables, their lifetime is the lifetime of the program.
+Static variables is other type of variables and memory allocation, the major difference is that it preserve its value, they aren't created/destroyed each time that your program calls a function. It corresponds to file scope variables and local static variables, their lifetime is the lifetime of the program.
 
 To declare a static variable, the only thing that you need to do is to use `static` keyword, like the fallowing example:
 
@@ -114,6 +116,7 @@ int main() {
     count();
     count();
     count();
+
     return 0;
 }
 ```
@@ -126,7 +129,44 @@ It's important to know that they aren't stored at stack like automatic allocatio
 
 *Worried because you don't know what is BSS/Data Segment/Stack/Heap? Don't panic, this will be explained on the next topic.*
 
+The compiler fixes the address and size of the static variable at compile time, so a static variable can only be initialized using constant literals, because the compiler needs to know the value of the variable, you can't initialize a static variable with a returned value of a function for example, the fallowing program will generates a compile error:
 
+```c
+#include <stdio.h>
+
+
+int initializer(void) {
+    return 50;
+}
+
+int main() {
+    static int i = initializer();
+    printf(" value of i = %d", i);
+    getchar();
+
+    return 0;
+}
+```
+
+Some people can think that static variables and global variables are the same thing, but they aren't, they have different scopes, you can't access static variable of one function `int count()` inside the function `int sum()`, while the global variable can be accessed in any function. But some question may appear, like, if we put a static variable on the global scope, it will be the same as a global variable? and the answer is no. Let's take a look:
+
+```c
+#include <stdio.h>
+
+
+static int counter x;
+int counter y;
+
+int main () {
+  // anything
+}
+```
+
+On this example we have two global scoped variables but the `x` is of static type, now you can ask me, what's the difference? `x` will have static linkage (file scope), the variable is only accessible in the current file, while the `y` has a external linkage and you can refer to this variable if you declare it with `extern` in another file, both variables follow the same rules to be stored (as I described before).
+
+Summarize: Static variables are statically allocated and their size and addresses are fixed at compiler time, the major difference is that it preserve its value, they aren't created/destroyed each time that your program call a function, they have function scope and are stored at data/BSS segment.
+
+#### Dynamic Memory Allocation
 
 ## Links
 
