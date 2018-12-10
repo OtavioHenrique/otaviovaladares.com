@@ -183,6 +183,16 @@ https://github.com/EdmundKorley/libfree/wiki/memory-layout-of-c-programs
 https://www.programiz.com/c-programming/c-arrays
 http://fractallambda.com/2014/10/30/Dynamic-Static-and-Automatic-memory.html
 https://www.includehelp.com/c/difference-between-automatic-auto-and-static-variables.aspx
+https://www.geeksforgeeks.org/memory-layout-of-c-program/
+http://mpatrol.sourceforge.net/doc/Static-memory-allocations.html
+https://en.wikipedia.org/wiki/Static_variable
+https://stackoverflow.com/questions/959889/difference-between-global-and-static-global
+https://stackoverflow.com/questions/44954524/difference-between-global-and-static-variable-in-c
+https://stackoverflow.com/questions/2271902/static-vs-global
+http://codingstreet.com/c-basic-questions/what-is-difference-between-global-and-static-variables-in-c/
+http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm
+https://overiq.com/c-programming-101/local-global-and-static-variables-in-c/
+
 
 ## Final thought
 
