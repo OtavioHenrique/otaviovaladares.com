@@ -17,6 +17,8 @@ tags:
 
 A few months ago, I started a series of posts about important topics of C programming and computer architecture, the first post was about pointers and you can check [here](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/), on this post I'll talk about dynamic memory allocation, I'll show what problem it solves and how to use.
 
+I've many criticisms about some ways that people usually teaches C programming, one of these is that is very difficult to find someone that explain the difference between each type of variable and allocation, they usually only say "that is a variable and use it" or "look, this is a malloc(), start using it", on this text I'll try to show the difference between each type, for those who didn't learn it learn and for those who learned it remember it!
+
 ## Types of Allocation
 
 #### Automatic Memory Allocation
@@ -82,7 +84,15 @@ It can looks obvious to majority of programmers but I think that few ask themsel
 
 Summarize of auto variables: Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
 
-#### Static Memory Allocation
+#### Dynamic Memory Allocation
+
+The famous dynamic memory allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
+
+I think one of the most common doubts among students is "Why did I need to use dynamic memory allocation, I don't need it!!"
+
+https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
+https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/
+https://www.programiz.com/c-programming/c-dynamic-memory-allocation
 
 ## Links
 
