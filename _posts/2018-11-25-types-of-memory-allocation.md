@@ -19,8 +19,6 @@ A few months ago, I started a series of posts about important topics of C progra
 
 I've many criticisms about some ways that people usually teaches C programming, one of these is that is very difficult to find someone that explain the difference between each type of variable and allocation, they usually only say "that is a variable and use it" or "look, this is a malloc(), start using it", on this text I'll try to show the difference between each type, for those who didn't learn it learn and for those who learned it remember it!
 
-
-
 ## Types of Allocation
 
 #### Automatic Memory Allocation
