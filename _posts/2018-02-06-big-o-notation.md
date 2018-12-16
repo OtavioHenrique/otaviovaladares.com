@@ -22,7 +22,7 @@ I'll explain all the basic of *Big O* notation with examples written in Ruby.
 
 **This is not a complete guide of *Big O* notation, if you want to know everything about, at the end of this post I give a north of where to continue your study**
 
-# 1. Introducing 
+# 1. Introducing
 
 ## This text is not recommended for
 
@@ -36,7 +36,7 @@ I'll explain all the basic of *Big O* notation with examples written in Ruby.
 - Simple examples
 - Simple Benchmarks
 
-## 1.1 First of all, what is Big O notation? 
+## 1.1 First of all, what is Big O notation?
 
 *Big O* notation is the language and metric we use when talking about growth rates and efficiency of algorithms. Can be used to describe the behavior of an algorithm in terms of the growth in the number of operations as the number of elements processed increases, with this technique we can evaluate how our code will behaves with a lot of data or operations.
 
@@ -54,7 +54,7 @@ It's better to know because a lot of methods of your favorite programming langua
 
 *And remember, a lot of big tech companys like Google, Facebook and Amazon asks for big o answers on their interview process, this is very common that is discussed on the legendary book Cracking the Code Interview.*
 
-# 2. Understanding 
+# 2. Understanding
 
 ## 2.1 Visualizing the complexity
 
@@ -223,7 +223,7 @@ array = [1,2,3,4,5,6,7,8,9,10]
 
 array.bsearch {|x| x >= 9 }
 
-# => 9 
+# => 9
 ```
 
 You can read more [here](http://ruby-doc.org/core-2.2.0/Array.html#method-i-bsearch)
@@ -266,7 +266,7 @@ This is obvius but, makes sense. Let's examine:
 
 In the binary tree, inserting one node (in a balanced tree) is *O(log n)* time. Inserting a list of N elements into that tree will be *O(n log n)* time.
 
-*O(n log n)* code can be often the result of an otimization of quadratic algorithm. The most famous example of this type is the merge sort algorithm. 
+*O(n log n)* code can be often the result of an otimization of quadratic algorithm. The most famous example of this type is the merge sort algorithm.
 
 For this definition won't have short history, I definitely didn't think in anything that makes sense on our history with dictionary.
 
@@ -274,7 +274,7 @@ For this definition won't have short history, I definitely didn't think in anyth
 
 ### 3.1.6 Sixth Solution *O(2^N)*
 
-Exponencial runtime, this is a very hard definition, like *O(n log n)*. This type of problem is when the number of instructions growth exponentially, it's common to found it on recursive algorithms, or some search algorithms. 
+Exponencial runtime, this is a very hard definition, like *O(n log n)*. This type of problem is when the number of instructions growth exponentially, it's common to found it on recursive algorithms, or some search algorithms.
 
 *"When you have a recursive function that makes multiple calls, the run time will be O(2^n)"*
 
@@ -385,7 +385,7 @@ Benchmark.bm { |bench| bench.report("o(n^2)") { o_n2(data) } }
 
 *Obviusly that this number will vary*
 
-This difference is pretty high, and that is where *Big O* came. Remember, on Big O we're talking about the "behavior of an algorithm in terms of the growth in the number of operations as the number of elements" as I talked on previus chapter. 
+This difference is pretty high, and that is where *Big O* came. Remember, on Big O we're talking about the "behavior of an algorithm in terms of the growth in the number of operations as the number of elements" as I talked on previus chapter.
 
 Ok, twenty thousand of data is pretty high from some people, and if we try an array of five thousand, is it enought?
 
@@ -396,13 +396,13 @@ o(n)  0.000000   0.000000   0.000000 (  0.000252)
 o(n^2)  1.330000   0.000000   1.330000 (  1.329480)
 ```
 
-If you're thinking: "The differente is so much smaller, I don't need to optimizate this code." 
+If you're thinking: "The differente is so much smaller, I don't need to optimizate this code."
 
 You're pretty wrong depending of your situation, because if we get the differente between and execution of each algorithm we have `1.329228s` of difference, and it can be an eternety for your costumer, if you consider that your client wait `1.329228s` three times each day, we're stealing `27.9s` per week of your costumer, and we're only working with five thounsand of data, I'm sure that a lot of people work with a lot of more.
 
 So, in this case of an *O(n^2)* I pretty recomend that you try to reduce this for an *O(n log n)*
 
-## 4.2 *O(N!)* 
+## 4.2 *O(N!)*
 
 This is a nice test because if we use one million of numbers the algorithm will take more than 10 hours to execute on my machine, and if I use five thousand of data (like on previus example) it will take a nice time too, so to show the *O(N!)* in action I'll need to use only 500 numbers.
 
@@ -431,14 +431,14 @@ And the final output is weird:
 
 I'll not benchmark all algorithms and data structures, but I pretty recommend that you study and test others one. Specially the *O(log n)*
 
-## 5.1 What's next? 
+## 5.1 What's next?
 
 If you want to be a rockstar at *Big O* just keep studying, reading a lot.
 
 You can read:
 
 - [Introduction to Algorithms, Third Edition](https://mitpress.mit.edu/books/introduction-algorithms)
-- [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Gayle-McDowell/dp/0984782850/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=careercup-ctciwebsite-20&linkId=173f3d8878a1d7f0d131a85fbfc9f67f) 
+- [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Gayle-McDowell/dp/0984782850/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=careercup-ctciwebsite-20&linkId=173f3d8878a1d7f0d131a85fbfc9f67f)
 
 This last books, have one chapter 100% dedicated to *Big O* notation, and I pretty recommend for those who wants to study more deep.
 
@@ -448,8 +448,7 @@ You can fallow the reference links bellow and study by yourself.
 
 It wasn a very long post, and I know it, but I think that a good understand of the big o principles is important for a lot of software engineers, to the day work or for coding interviews.
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
-f you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
 
 # 7. Reference
 

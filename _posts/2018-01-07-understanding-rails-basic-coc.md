@@ -230,7 +230,7 @@ At this point, we already have the model and Controller, and on the next lines o
 
  Rails documentation of action view for better understanding:
 
- *"There is a naming convention for views in Rails. Typically, the views share their name with the associated controller action, as you can see above. For example, the index controller action of the articles_controller.rb will use the index.html.erb view file in the app/views/articles directory. The complete HTML returned to the client is composed of a combination of this ERB file, a layout template that wraps it, and all the partials that the view may reference. Within this guide you will find more detailed documentation about each of these three components.  
+ *"There is a naming convention for views in Rails. Typically, the views share their name with the associated controller action, as you can see above. For example, the index controller action of the articles_controller.rb will use the index.html.erb view file in the app/views/articles directory. The complete HTML returned to the client is composed of a combination of this ERB file, a layout template that wraps it, and all the partials that the view may reference. Within this guide you will find more detailed documentation about each of these three components.
 See more: http://guides.rubyonrails.org/action_view_overview.html"*
 
 
@@ -391,4 +391,4 @@ Everything is done, if you have any question, please ask.
 The code of the example can be found [here](https://github.com/OtavioHenrique/scaffold_example)
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/ValadaresOtavio).
+[twitter](https://twitter.com/opvaladares).

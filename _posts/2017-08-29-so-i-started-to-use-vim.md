@@ -103,4 +103,4 @@ If you want, you can find my vimfiles
 Thanks.
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/ValadaresOtavio).
+[twitter](https://twitter.com/opvaladares).

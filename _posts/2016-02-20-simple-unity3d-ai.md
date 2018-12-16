@@ -8,8 +8,8 @@ header-img: "img/in-post/post-simple-unity3d-ai/ai.jpg"
 catalog:    true
 header-mask:  0.3
 tags:
-    - Unity3d
-    - AI
+  - Unity3d
+  - AI
 ---
 
 In this post I am going to explain how I have developed a simple AI system for
@@ -270,6 +270,6 @@ the project/code, I was 16 years old when I wrote this.
 
 [https://github.com/OtavioHenrique/simpleAI](https://github.com/OtavioHenrique/simpleAI)
 
-And ask me on my Twitter or Linkedin
+And ask me on my [Twitter](https://twitter.com/opvaladares)
 
 **Thanks guys, see you soon.**

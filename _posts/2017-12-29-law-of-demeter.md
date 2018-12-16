@@ -21,7 +21,7 @@ During my studies of object oriented programming and good practices, one law/pra
 
 (Short Answer) - Basically LoD say that your object can only talk with their neighbors. On some OOP languages, for simplify just think "Use only one dot".
 
-Law of Demeter (LoD) is a design guideline that was proposed by Ian Holland in 1987. Remember when your mom told you to not talk with strangers? It's almost the same, but with your objects.  
+Law of Demeter (LoD) is a design guideline that was proposed by Ian Holland in 1987. Remember when your mom told you to not talk with strangers? It's almost the same, but with your objects.
 
 Imagine that you have an object, this object can only talk with your methods, or with your neighbors, you should avoid call method of a object returned by another method.
 
@@ -31,7 +31,7 @@ For example, the fallowing code breaks the law, and throw it in the trash:
 
 ```ruby
 class Book
-  ..     
+  ..
 end
 
 class ExampleClass
@@ -71,4 +71,4 @@ Spread the rule on your project doesn't work, sometimes your design is wrong, an
 ## Ending
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/ValadaresOtavio).
+[twitter](https://twitter.com/opvaladares).

@@ -427,7 +427,7 @@ difference.
                     "publication-date": "2005-04-21"
                 }
             }
-        ]    
+        ]
     }
 
 Your api response are now fallowing jsonapi specification without pains.
@@ -617,4 +617,4 @@ responsibility”**
 Everything is done, if you have any question, please ask.
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/ValadaresOtavio).
+[twitter](https://twitter.com/opvaladares).

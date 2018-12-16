@@ -856,7 +856,7 @@ Now we got our list finished and working and I hope that you have learned a lot 
 
 Remembering, that the code of this is list you can find on my github [here](https://github.com/OtavioHenrique/linked_list)
 
-And if you have any question please ask anywhere, you can comment this post, PM me on [twitter](https://twitter.com/ValadaresOtavio) or send me an email (otaviopvaladares@gmail.com), I'll love it!
+And if you have any question please ask anywhere, you can comment this post, PM me on [twitter](https://twitter.com/opvaladares) or send me an email (otaviopvaladares@gmail.com), I'll love it!
 
 Don't forget to follow me on my [twitter](https://twitter.com/ValadaresOtavio)
 

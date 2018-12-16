@@ -52,7 +52,7 @@ source ~/.vimrc
 
 It will route your nvim config to your previous vim setup, but it's important to know that some plugins may not work, nvim isn't entirely compatible with vim, but almost all plugins work on nvim too, with me, all plugins worked fine.
 
-## Different setup for nvim 
+## Different setup for nvim
 
 For a lot of people the previous solution will be satisfying, but for me no. I want to stop using vim, so the previous solution doesn't solve my problem, I want to have my own nvim setup. Luckily it's easy too, on vim I use `vim-pathogen` to manage my plugins, so all my plugins are located at `~/.vim/bundle/`, I just need to make a copy of this folder but on my nvim directory.
 
@@ -85,12 +85,12 @@ Neovim has some differences from vim, you can check it by typing `:help vim-diff
 - Providers
    - Clipboard
    - Node.js plugins
-   - Python plugins        
+   - Python plugins
    - Ruby plugins
 - Shared data
-- Embedded terminal        
-- VimL parser            
-- XDG base directories        
+- Embedded terminal
+- VimL parser
+- XDG base directories
 
 But I pretty recommend that you read the full documentation at `:help vim-differences`.
 
@@ -100,4 +100,4 @@ Nvim have some plugins that take advantage of specific nvim features, you can ch
 
 It wasn't a very long post, and it's purposeful, I don't have much to talk about neovim yet, the objective of this post It only talks about how I migrate from vim to neovim. On next weeks I'll write about my plugins and describing some tricks of my vim/nvim configs.
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!

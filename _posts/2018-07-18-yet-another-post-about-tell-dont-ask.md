@@ -17,7 +17,7 @@ tags:
     - Ruby
 ---
 
-Tell, don't ask is a useful key concept when talking about object-oriented programming, it consists in send messages to object (whenever possible) telling object what you want and that we shouldn't ask questions to it about its state and make decisions for him, it bypass encapsulation. 
+Tell, don't ask is a useful key concept when talking about object-oriented programming, it consists in send messages to object (whenever possible) telling object what you want and that we shouldn't ask questions to it about its state and make decisions for him, it bypass encapsulation.
 
 *In more abstract mindset, every object needs to trust that other object can make decisions alone, without his help.*
 
@@ -223,7 +223,7 @@ Luckily on internet we've hundreds of examples in many languages, you should sea
 
 [On this article from thoughtbot you can see a lot of interesting and more real world examples](https://robots.thoughtbot.com/tell-dont-ask).
 
-Sandi Metz in her famous book [Practical Object-Oriented Design in Ruby: An Agile Primer ](https://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) wrote: 
+Sandi Metz in her famous book [Practical Object-Oriented Design in Ruby: An Agile Primer ](https://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) wrote:
 
 *"The distinction between a message that asks for what the sender wants and a message
 that tells the receiver how to behave may seem subtle but the consequences are
@@ -237,7 +237,7 @@ This isn't easy get started thinking like this and correcting your errors, but y
 
 [I have an old post about law of demeter that can interest you](https://otaviovaladares.com/2017/12/29/law-of-demeter/)
 
-Thanks all for read this post, don't forget to follow me on [twitter](https://twitter.com/ValadaresOtavio), any questions you can send me an email, have good days.
+Thanks all for read this post, don't forget to follow me on [twitter](https://twitter.com/opvaladares), any questions you can send me an email, have good days.
 
 ## Useful links
 

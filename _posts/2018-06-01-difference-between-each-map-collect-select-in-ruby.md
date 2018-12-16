@@ -29,22 +29,22 @@ for i in 0..places.size
 puts places[i]
 end
 
-# => restaurant 
-# => mall 
-# => park 
+# => restaurant
+# => mall
+# => park
 # => theater
 ```
 
 Ok, this works but is not readable, it's not a natural language, and in ruby, we love to prioritize it, with `.each` it will be much more lovely.
 
 ```ruby
-places.each do |place| 
-  puts place 
-end 
+places.each do |place|
+  puts place
+end
 
-# => restaurant 
-# => mall 
-# => park 
+# => restaurant
+# => mall
+# => park
 # => theater
 ```
 
@@ -57,14 +57,14 @@ places.each { |place| puts place }
 ### Another Example
 
 ```ruby
-numbers = [1, 2, 3, 4, 5] 
-numbers.each { |number| puts number * 2 } 
+numbers = [1, 2, 3, 4, 5]
+numbers.each { |number| puts number * 2 }
 
-# => 2 
-# => 4 
-# => 6 
-# => 8 
-# => 10 
+# => 2
+# => 4
+# => 6
+# => 8
+# => 10
 ```
 
 Pay attention, `each` doesn't alter the array.
@@ -72,21 +72,21 @@ Pay attention, `each` doesn't alter the array.
 *Note, on last example we multiply each element by 2, but if we print, the array is not multiplied*
 
 ```ruby
-puts numbers 
+puts numbers
 
-# => 1 
-# => 2 
-# => 3 
-# => 4 
-# => 5 
+# => 1
+# => 2
+# => 3
+# => 4
+# => 5
 ```
 
 *Note too, if we try to save each block at one variable it doesn't work, because it will return the same array*
 
 ```ruby
-a = numbers.each { |number| puts number * 2 } 
+a = numbers.each { |number| puts number * 2 }
 # ..
-puts a 
+puts a
 # => [1, 2, 3, 4, 5]
 ```
 
@@ -97,9 +97,9 @@ Different from each, the `.map` is very powerful because it returns an array wit
 *Note, the final output is an array*
 
 ```ruby
-numbers.map { |number| number * 2 } 
+numbers.map { |number| number * 2 }
 
-# => [2, 4, 6, 8, 10] 
+# => [2, 4, 6, 8, 10]
 ```
 
 More understandable example:
@@ -107,11 +107,11 @@ More understandable example:
 *On this example we apply `.upcase` on each element, after this we've an array `places_upcase` with each place in upcase.*
 
 ```ruby
-places = ['restaurant', 'mall', 'park', 'theater'] 
-places_upcase = places.map { |place| place.upcase } 
-# => ["RESTAURANT", "MALL", "PARK", "THEATER"] 
+places = ['restaurant', 'mall', 'park', 'theater']
+places_upcase = places.map { |place| place.upcase }
+# => ["RESTAURANT", "MALL", "PARK", "THEATER"]
 
-places_upecase 
+places_upecase
 # => ["RESTAURANT", "MALL", "PARK", "THEATER"]
 ```
 
@@ -126,18 +126,18 @@ Also Known As "Filter" in other languagens, `select` executes the passed express
 *On this code we use `select` to return an array with all numbers greater than 3.*
 
 ```ruby
-numbers = [1, 2, 3, 4, 5] 
+numbers = [1, 2, 3, 4, 5]
 
-numbers.select { |number| number > 3 } 
+numbers.select { |number| number > 3 }
 # => [4, 5]
 ```
 
 Another good example is to use `select` to get all odd numbers of one array.
 
 ```ruby
-odd_numbers = numbers.select { |number| number.odd? } 
+odd_numbers = numbers.select { |number| number.odd? }
 
-odd_numbers 
+odd_numbers
 # => [1, 3, 5]
 ```
 
@@ -150,14 +150,14 @@ Now you can ask me, what is this Enumerable mixin? It's simple.
 `Enumerable` it's a ruby module, it provides collection classes with several traversal and searching methods, a lot of methods, as you can see:
 
 ```ruby
-Enumerable.instance_methods 
-# => [:to_a, :to_h, :include?, :find, :entries, :sort, :sort_by, :grep, :grep_v, :count, :detect, :find_index, :find_all, :select, :reject, :collect, :map, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :first, :all?, :any?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :reverse_each, :each_entry, :each_slice, :each_cons, :each_with_object, :zip, :take, :take_while, :drop, :drop_while, :cycle, :chunk, :slice_before, :slice_after, :slice_when, :chunk_while, :lazy]  
+Enumerable.instance_methods
+# => [:to_a, :to_h, :include?, :find, :entries, :sort, :sort_by, :grep, :grep_v, :count, :detect, :find_index, :find_all, :select, :reject, :collect, :map, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :first, :all?, :any?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :reverse_each, :each_entry, :each_slice, :each_cons, :each_with_object, :zip, :take, :take_while, :drop, :drop_while, :cycle, :chunk, :slice_before, :slice_after, :slice_when, :chunk_while, :lazy]
 
-Enumerable.class 
+Enumerable.class
 # => Module
 ```
 
-Wow, it's awesome, isn't it? 
+Wow, it's awesome, isn't it?
 
 And for being a module, you can include it on your class and have access to this collection of powerful methods. But, how to include it? It's not just add `include Enumerable ` to your class, you need to create an `each` method in your class that yields every element of collection.
 
@@ -168,13 +168,13 @@ Let's use a simple example to apply this, a class named `OddNumbers`.
 *The class have a `each` method that yields three odd numbers.*
 
 ```ruby
-class OddNumbers 
-  include Enumerable 
-  
-  def each 
-    yield 1 
-    yield 3 
-    yield 5 
+class OddNumbers
+  include Enumerable
+
+  def each
+    yield 1
+    yield 3
+    yield 5
   end
 end
 ```
@@ -182,14 +182,14 @@ end
 After do that, you already can see all `Enumerable` methods in your class.
 
 ```ruby
-OddNumbers.instance_methods 
+OddNumbers.instance_methods
 # => [:each, :to_a, :to_h, :include?, :find, :entries, :sort, :sort_by, :grep, :grep_v, :count, :detect, :find_index, :find_all, :select, :reject, :collect, :map, :flat_map, :collect_concat, :inject, :reduce, :partition, :group_by, :first, :all?, :any?, :one?, :none?, :min, :max, :minmax, :min_by, :max_by, :minmax_by, :member?, :each_with_index, :reverse_each, :each_entry, :each_slice, :each_cons, :each_with_object, :zip, :take, :take_while, :drop, :drop_while, :cycle, :chunk, :slice_before, :slice_after, :slice_when, :chunk_while, :lazy, :instance_of?, :public_send, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :private_methods, :kind_of?, :instance_variables, :tap, :method, :public_method, :singleton_method, :is_a?, :extend, :define_singleton_method, :to_enum, :enum_for, :<=>, :===, :=~, :!~, :eql?, :respond_to?, :freeze, :inspect, :display, :object_id, :send, :to_s, :nil?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :trust, :untrusted?, :methods, :protected_methods, :frozen?, :public_methods, :singleton_methods, :!, :==, :!=, :__send__, :equal?, :instance_eval, :instance_exec, :__id__]
 ```
 
 And you can see it as included module too
 
 ```ruby
-OddNumbers.included_modules 
+OddNumbers.included_modules
 # => [Enumerable, Kernel]
 ```
 
@@ -197,19 +197,19 @@ OddNumbers.included_modules
 
 And this is why ruby's `Array` and `Hash` have this methods, on their code, they include `Enumerable`.
 ```ruby
-Array.included_modules 
-# => [Enumerable, Kernel]  
-Hash.included_modules 
+Array.included_modules
+# => [Enumerable, Kernel]
+Hash.included_modules
 # => [Enumerable, Kernel]
 ```
 
 ## Conclusion
 
-A lot of people when are starting with ruby programming think all these methods it's all the same (and it's normal!) but they aren't, when you understand each one, not only each/select/map but a lot of others of Enumerable module, you have great power in your fingers, obviously nobody will memorize all methods of this module, but you can search on documentation when you need something that smeels like an Enumerable method. 
+A lot of people when are starting with ruby programming think all these methods it's all the same (and it's normal!) but they aren't, when you understand each one, not only each/select/map but a lot of others of Enumerable module, you have great power in your fingers, obviously nobody will memorize all methods of this module, but you can search on documentation when you need something that smeels like an Enumerable method.
 
 [I pretty recommend that you read the documentation of Enumerable](https://ruby-doc.org/core-2.5.1/Enumerable.html)
 
-If you have any question that I can help you, please ask! Send email (otaviopvaladares@gmail.com), pm me on my [twitter](https://twitter.com/ValadaresOtavio) or comment this post!
+If you have any question that I can help you, please ask! Send email (otaviopvaladares@gmail.com), pm me on my [twitter](https://twitter.com/opvaladares) or comment this post!
 
 [Don't forget to fallow me on twitter](https://twitter.com/ValadaresOtavio)
 
