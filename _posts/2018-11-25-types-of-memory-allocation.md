@@ -181,6 +181,7 @@ You can create a large array of integers as in the fallowing example we use `int
 ```c
 #include <stdio.h>
 
+
 int main() {
     int numbers[500];
     int counter;
@@ -204,6 +205,7 @@ The other way is to use variable-length arrays (also called VLA), this solution 
 ```c
 #include <stdio.h>
 
+
 int main() {
     int counter;
 
@@ -225,7 +227,37 @@ int main() {
 
 Ok, it partially resolves our problem, we won't waste memory but use VLA is controversial and if you search on internet (and I encourage you to search) you'll find a lot of people talking about why you shouldn't use VLAs. But we have two main problems on this solution, the first is that our array will be automatic allocated, it means that it will be allocated on stack memory, this is a problem because stack memory is not a large memory and if you try to allocate a large array you'll get stackoverflow error, other problem as you know is that automatic variables only exists on the current scope. Other small problem on this solution is that VLA was introduced on C99 and old compilers will not compile it.
 
+The other solution is to use dynamic memory allocation with `malloc()` to reserve a block of memory with the exact size that we need, this is the best solution is almost all cases:
 
+```c
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main() {
+    int counter;
+
+    printf("How many numbers you will store? ");
+    scanf("%d", &counter);
+
+    int *numbers = malloc(sizeof(int) * counter);
+
+    for(int i = 0; i < counter; i++) {
+        printf("Enter with number %d: ", i+1);
+        scanf("%d", &numbers[i]);
+    }
+
+    /* any logic .. */
+
+    free(numbers);
+    return 0;
+}
+```
+
+This is the best solution and its using DMA on the right way, you're using heap memory and you have full control of when you want to free this block of memory using `free()`, another good thing is that you can use `realloc()` if you want to resize our block.
+
+https://nptel.ac.in/courses/122104019/numerical-analysis/iitm/lIITM5.HTM
 https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
 https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/
 https://www.programiz.com/c-programming/c-dynamic-memory-allocation
@@ -254,6 +286,10 @@ https://stackoverflow.com/questions/2271902/static-vs-global
 http://codingstreet.com/c-basic-questions/what-is-difference-between-global-and-static-variables-in-c/
 http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm
 https://overiq.com/c-programming-101/local-global-and-static-variables-in-c/
+
+https://stackoverflow.com/questions/2034712/is-there-any-overhead-for-using-variable-length-arrays
+http://man.he.net/?topic=malloc&section=all
+https://www.quora.com/How-can-I-make-an-array-with-variable-size-in-the-C-language
 
 
 ## Final thought
