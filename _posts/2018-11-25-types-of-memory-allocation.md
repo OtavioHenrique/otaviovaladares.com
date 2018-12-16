@@ -172,7 +172,59 @@ Summarize: Static variables are statically allocated and their size and addresse
 
 The famous dynamic memory allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
 
-I think one of the most common doubts among students is "Why did I need to use dynamic memory allocation, I don't need it!!"
+*Reinforcing the importance of pointers to dynamic memory allocation, I suggest that you have a solid knowledge of pointers, you can read any tutorial on the internet, or [the one that I have here, on my blog](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/).*
+
+I think one of the most common doubts among students is "Why did I need to use dynamic memory allocation, I don't need it!!" or something like "Why did I need another way of create variables?". The most common case to use dynamic memory allocation is when you don't know the input on compile time and need to manage memory at runtime of the program, what it means? For example, you have to store `n` integers from user's input and you don't know how many integers the user will store on the compile time, in this case you have three ways..
+
+You can create a large array of integers as in the fallowing example we use `int numbers[500]`, the trade-off of this way is that if your user store less than 500 numbers you have a memory leak, because a smaller array would be better, and if your user want to store more than 500 numbers your software wouldn't support it.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int numbers[500];
+    int counter;
+
+    printf("How many numbers you will store? ");
+    scanf("%d", &counter);
+
+    for(int i = 0; i < counter; i++) {
+        printf("Enter with number %d: ", i+1);
+        scanf("%d", &numbers[i]);
+    }
+
+    /* any logic .. */
+
+    return 0;
+}
+```
+
+The other way is to use variable-length arrays (also called VLA), this solution is very closely to the previous, the only difference is the use of VLA when creating the array.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int counter;
+
+    printf("How many numbers you will store? ");
+    scanf("%d", &counter);
+
+    int numbers[counter];
+
+    for(int i = 0; i < counter; i++) {
+        printf("Enter with number %d: ", i+1);
+        scanf("%d", &numbers[i]);
+    }
+
+    /* any logic .. */
+
+    return 0;
+}
+```
+
+Ok, it partially resolves our problem, we won't waste memory but use VLA is controversial and if you search on internet (and I encourage you to search) you'll find a lot of people talking about why you shouldn't use VLAs. But we have two main problems on this solution, the first is that our array will be automatic allocated, it means that it will be allocated on stack memory, this is a problem because stack memory is not a large memory and if you try to allocate a large array you'll get stackoverflow error, other problem as you know is that automatic variables only exists on the current scope. Other small problem on this solution is that VLA was introduced on C99 and old compilers will not compile it.
+
 
 https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
 https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/
