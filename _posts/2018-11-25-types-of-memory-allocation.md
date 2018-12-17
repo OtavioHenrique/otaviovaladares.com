@@ -174,7 +174,27 @@ The famous dynamic memory(aka DMA) allocation that scares a bunch of people at t
 
 *Reinforcing the importance of pointers to dynamic memory allocation, I suggest that you have a solid knowledge of pointers, you can read any tutorial on the internet, or [the one that I have here, on my blog](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/).*
 
-To dynamic allocate memory in C language(this part can be a little bit different from C++) you need to include `stdlib.h`
+To dynamic allocate memory in C language(this part its different from C++), you need to include `stdlib.h` to have access to functions that C provides to dynamic allocation, you can check all functions that you'll gain access [here](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm) but on this post we'll only take a look at only four of them:
+
+```
+void *malloc(size_t size);
+void free(void *ptr);
+void *calloc(size_t nmemb, size_t size);
+void *realloc(void *ptr, size_t size);
+```
+
+Let's start with `void *malloc(size_t size)` probably one of the most famous functions of computer science. It allocates `n` bytes of memory and returns as a pointer, it's important to be careful because `n` needs to be the exactly number of bytes that you need to store your data, for example, if we want to store a simple information of type `int` as we remember we'll need 8 bytes, so, you pass 8 to the `malloc()` and it'll return a pointer to the first byte of this block of memory:
+
+```
+int *number = malloc(8);
+```
+
+http://man.he.net/?topic=malloc&section=all
+https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
+https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
+https://www.google.com.br/search?ei=fDsYXNSSDcSIwgTRj5P4DA&q=picoc+install+linux&oq=picoc+install+linux&gs_l=psy-ab.3..0i22i30.8552.9881..9999...0.0..0.438.1459.2-4j0j1......0....1..gws-wiz.......0i71j0i22i10i30j0i8i13i30.S1Ytz9NDk6o
+https://www.tutorialspoint.com/cprogramming/c_data_types.htm
+
 
 https://pt.wikipedia.org/wiki/Stdlib.h
 http://man.he.net/?topic=malloc&section=all
