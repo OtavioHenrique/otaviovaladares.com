@@ -170,9 +170,15 @@ Summarize: Static variables are statically allocated and their size and addresse
 
 #### Dynamic Memory Allocation
 
-The famous dynamic memory allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
+The famous dynamic memory(aka DMA) allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
 
 *Reinforcing the importance of pointers to dynamic memory allocation, I suggest that you have a solid knowledge of pointers, you can read any tutorial on the internet, or [the one that I have here, on my blog](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/).*
+
+To dynamic allocate memory in C language(this part can be a little bit different from C++) you need to include `stdlib.h`
+
+https://pt.wikipedia.org/wiki/Stdlib.h
+http://man.he.net/?topic=malloc&section=all
+
 
 I think one of the most common doubts among students is "Why did I need to use dynamic memory allocation, I don't need it!!" or something like "Why did I need another way of create variables?". The most common case to use dynamic memory allocation is when you don't know the input on compile time and need to manage memory at runtime of the program, what it means? For example, you have to store `n` integers from user's input and you don't know how many integers the user will store on the compile time, in this case you have three ways..
 
