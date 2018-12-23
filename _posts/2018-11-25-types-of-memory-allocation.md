@@ -176,18 +176,84 @@ The famous dynamic memory(aka DMA) allocation that scares a bunch of people at t
 
 To dynamic allocate memory in C language(this part its different from C++), you need to include `stdlib.h` to have access to functions that C provides to dynamic allocation, you can check all functions that you'll gain access [here](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm) but on this post we'll only take a look at only four of them:
 
-```
+```c
 void *malloc(size_t size);
 void free(void *ptr);
 void *calloc(size_t nmemb, size_t size);
 void *realloc(void *ptr, size_t size);
 ```
 
-Let's start with `void *malloc(size_t size)` probably one of the most famous functions of computer science. It allocates `n` bytes of memory and returns as a pointer, it's important to be careful because `n` needs to be the exactly number of bytes that you need to store your data, for example, if we want to store a simple information of type `int` as we remember we'll need 8 bytes, so, you pass 8 to the `malloc()` and it'll return a pointer to the first byte of this block of memory:
+Let's start with `void *malloc(size_t size)` probably one of the most famous functions of computer science. It allocates `n` bytes of memory and returns as a pointer, it's important to be careful because `n` needs to be the exactly number of bytes that you need to store your data, for example, if we want to store a simple information of type `int` as we remember we'll need 8 bytes, so, you pass 4 to the `malloc()` and it'll return a pointer to the first byte of this block of memory:
 
+```c
+int *number = malloc(4);
 ```
-int *number = malloc(8);
+
+Now your variable `number` is a pointer to a block of 4 bits of memory, the necessary to store a integer:
+
+```c
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main () {
+    int *number = malloc(4);
+
+    *number = 1234;
+
+    printf("%d", *number);
+}
 ```
+
+*If you try to store a number that have more than 4 bits you'll get a overflow error.*
+
+You probably are asking yourself if you'll need to know the size of each data that you'll store, and fortunately the answer is no, you don't have to know all data size, we have a function that returns the data size and is called `sizeof()`, to use it is very simple, just pass the variable type(or a variable of the type) that you want. Combining it with the previous `malloc()` you'll have a great power in your hands.
+
+
+```c
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main () {
+    int *number = malloc(sizeof(int));
+
+    *number = 1234;
+
+    printf("%d", *number);
+}
+```
+
+If you need to create an array dynamically just multiply the size by the number of items of your array, for example, if you want an array of 10 ints, just do that:
+
+```c
+int *numbers = malloc(sizeof(int)* 10);
+```
+
+Other important function from `stdlib.h` is `free()`, it's so important to your memory management and if you forgot to use `free()` you'll have a memory leak. Simplifying, C programming language don't have a garbage collector, it means that all memory that is dynamic allocated don't get destroyed by the language in runtime, and you need to manage memory use by yourself while coding, if you allocate a new memory using `malloc()` when you stop using this variable you SHOULD free it.
+
+```c
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+int main () {
+    int *numbers = malloc(sizeof(int) * 10);
+
+    for(int i = 0; i < 10; i++) {
+        numbers[i] = i + 10;
+        printf("%d\n", numbers[i]);
+    }
+
+
+    free(numbers);
+}
+```
+
+
 
 http://man.he.net/?topic=malloc&section=all
 https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
