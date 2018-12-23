@@ -21,7 +21,9 @@ I've many criticisms about some ways that people usually teaches C programming, 
 
 ## Types of Allocation
 
-#### Automatic Memory Allocation
+### Automatic Memory Allocation
+
+#### How to use
 
 Automatic memory allocation corresponds to the automatic variables, also known as "stack" memory, it's memory allocated at runtime when you enter into a new scope, each time that a function is called its auto variables are pushed to stack.
 
@@ -81,7 +83,8 @@ void anyThing() {
 
 int main() {
     anyThing();
-    /* The variable autoVariable doesn't existis here, it only exists inside its function*/
+    /* The variable autoVariable doesn't existis here */
+    /* it only exists inside its function*/
 
     return 0;
 }
@@ -89,11 +92,15 @@ int main() {
 
 *It can looks obvious to majority of programmers but I think that few ask themselves about why it occurs.*
 
-Summarize: Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
+#### Summarize
 
-#### Static Memory Allocation
+Every variable declared without any keyword(or `auto` keyword) at any function will be considered "auto" variables, and will be automatic allocated during runtime of the software at memory using the program's stack, this kind of variable life time is only during the execution of the function block or scope, after this, the variable is pushed out of the stack.
+
+### Static Memory Allocation
 
 Static variables is other type of variables and memory allocation, the major difference is that it preserve its value, they aren't created/destroyed each time that your program calls a function. It corresponds to file scope variables and local static variables, their lifetime is the lifetime of the program.
+
+##### How to use
 
 To declare a static variable, the only thing that you need to do is to use `static` keyword, like the fallowing example:
 
@@ -166,9 +173,11 @@ int main () {
 
 On this example we have two global scoped variables but the `x` is of static type, now you can ask me, what's the difference? `x` will have static linkage (file scope), the variable is only accessible in the current file, while the `y` has a external linkage and you can refer to this variable if you declare it with `extern` in another file, both variables follow the same rules to be stored (as I described before).
 
-Summarize: Static variables are statically allocated and their size and addresses are fixed at compiler time, the major difference is that it preserve its value, they aren't created/destroyed each time that your program call a function, they have function scope and are stored at data/BSS segment.
+#### Summarize
 
-#### Dynamic Memory Allocation
+Static variables are statically allocated and their size and addresses are fixed at compiler time, the major difference is that it preserve its value, they aren't created/destroyed each time that your program call a function, they have function scope and are stored at data/BSS segment.
+
+### Dynamic Memory Allocation
 
 The famous dynamic memory(aka DMA) allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
 
@@ -182,6 +191,8 @@ void free(void *ptr);
 void *calloc(size_t nmemb, size_t size);
 void *realloc(void *ptr, size_t size);
 ```
+
+#### malloc()
 
 Let's start with `void *malloc(size_t size)` probably one of the most famous functions of computer science. It allocates `n` bytes of memory and returns as a pointer, it's important to be careful because `n` needs to be the exactly number of bytes that you need to store your data, for example, if we want to store a simple information of type `int` as we remember we'll need 8 bytes, so, you pass 4 to the `malloc()` and it'll return a pointer to the first byte of this block of memory:
 
@@ -232,6 +243,8 @@ If you need to create an array dynamically just multiply the size by the number 
 int *numbers = malloc(sizeof(int)* 10);
 ```
 
+#### free()
+
 Other important function from `stdlib.h` is `free()`, it's so important to your memory management and if you forgot to use `free()` you'll have a memory leak. Simplifying, C programming language don't have a garbage collector, it means that all memory that is dynamic allocated don't get destroyed by the language in runtime, and you need to manage memory use by yourself while coding, if you allocate a new memory using `malloc()` when you stop using this variable you SHOULD free it.
 
 ```c
@@ -253,6 +266,8 @@ int main () {
 }
 ```
 
+#### calloc() and realloc()
+
 We have also two more functions to discuss here, `calloc()` and `realloc()`, they are very simple if you understand the concept of `malloc()` let's start with `calloc()`.
 
 `calloc()` is equal to `malloc()` with two differences: `calloc()` it initializes all values of your block with 0 while `malloc()` initializes each block with garbage values, and it takes two arguments, the number of blocks to be allocated and size of each block, with this, if you want to allocate an array of 10 ints, you don't need to multiply 10 by the size of each block, you just need to pass ten as argument.
@@ -261,16 +276,17 @@ We have also two more functions to discuss here, `calloc()` and `realloc()`, the
 int *numbers = calloc(10, sizeof(int));
 ```
 
-http://man.he.net/?topic=malloc&section=all
-https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
-https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
-https://www.google.com.br/search?ei=fDsYXNSSDcSIwgTRj5P4DA&q=picoc+install+linux&oq=picoc+install+linux&gs_l=psy-ab.3..0i22i30.8552.9881..9999...0.0..0.438.1459.2-4j0j1......0....1..gws-wiz.......0i71j0i22i10i30j0i8i13i30.S1Ytz9NDk6o
-https://www.tutorialspoint.com/cprogramming/c_data_types.htm
+`realloc()` as the name says you can re-allocate a memory previously allocated using `malloc()` in other words, if you have an array previous allocated with 5 ints using `malloc()` and you want to resize it to 10 ints, you can use `realloc()`. To use it, you only need to pass the previous pointer and the new size. Using it, you'll resize the allocated space on the heap.
 
+```c
+int *numbers = malloc(sizeof(int)* 5);
 
-https://pt.wikipedia.org/wiki/Stdlib.h
-http://man.he.net/?topic=malloc&section=all
+int *newNumbers = realloc(numbers, sizeof(int)* 10);
+```
 
+I'll not enter in details of how to use `malloc()`, `realloc()`, `calloc()` and free because isn't the objective of the text, on a future post I'll only write about how to use this functions with mastery.
+
+#### Why use DMA?
 
 I think one of the most common doubts among students is "Why did I need to use dynamic memory allocation, I don't need it!!" or something like "Why did I need another way of create variables?". The most common case to use dynamic memory allocation is when you don't know the input on compile time and need to manage memory at runtime of the program, what it means? For example, you have to store `n` integers from user's input and you don't know how many integers the user will store on the compile time, in this case you have three ways..
 
@@ -323,7 +339,7 @@ int main() {
 }
 ```
 
-Ok, it partially resolves our problem, we won't waste memory but use VLA is controversial and if you search on internet (and I encourage you to search) you'll find a lot of people talking about why you shouldn't use VLAs. But we have two main problems on this solution, the first is that our array will be automatic allocated, it means that it will be allocated on stack memory, this is a problem because stack memory is not a large memory and if you try to allocate a large array you'll get stackoverflow error, other problem as you know is that automatic variables only exists on the current scope. Other small problem on this solution is that VLA was introduced on C99 and old compilers will not compile it.
+It partially solves our problem, we won't waste memory but use VLA is controversial and if you search on internet (and I encourage you to search) you'll find a lot of people talking about why you shouldn't use VLAs. But we have two main problems on this solution, the first is that our array will be automatic allocated, it means that it will be allocated on stack memory, this is a problem because stack memory is not a large memory and if you try to allocate a large array you'll get stackoverflow error, other problem as you know is that automatic variables only exists on the current scope. Other small problem on this solution is that VLA was introduced on C99 and old compilers will not compile it.
 
 The other solution is to use dynamic memory allocation with `malloc()` to reserve a block of memory with the exact size that we need, this is the best solution is almost all cases:
 
@@ -355,12 +371,20 @@ int main() {
 
 This is the best solution and its using DMA on the right way, you're using heap memory and you have full control of when you want to free this block of memory using `free()`, another good thing is that you can use `realloc()` if you want to resize our block.
 
+#### Summarize
+
+The necessity of dynamically allocate memory is a reality on everyday programmers day, you'll need to know how to use `malloc()` to allocate heap memory at runtime, the advantages are many, you have full control of your memory, you choose when you want to free this memory, and you gain control over memory usage of your software.
+
+### Final thought
+
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+
+## Links
+
 https://nptel.ac.in/courses/122104019/numerical-analysis/iitm/lIITM5.HTM
 https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
 https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/
 https://www.programiz.com/c-programming/c-dynamic-memory-allocation
-
-## Links
 
 https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
 https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation
@@ -389,7 +413,12 @@ https://stackoverflow.com/questions/2034712/is-there-any-overhead-for-using-vari
 http://man.he.net/?topic=malloc&section=all
 https://www.quora.com/How-can-I-make-an-array-with-variable-size-in-the-C-language
 
+http://man.he.net/?topic=malloc&section=all
+https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
+https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
+https://www.google.com.br/search?ei=fDsYXNSSDcSIwgTRj5P4DA&q=picoc+install+linux&oq=picoc+install+linux&gs_l=psy-ab.3..0i22i30.8552.9881..9999...0.0..0.438.1459.2-4j0j1......0....1..gws-wiz.......0i71j0i22i10i30j0i8i13i30.S1Ytz9NDk6o
+https://www.tutorialspoint.com/cprogramming/c_data_types.htm
 
-## Final thought
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/ValadaresOtavio) or comment on this post!
+https://pt.wikipedia.org/wiki/Stdlib.h
+http://man.he.net/?topic=malloc&section=all
