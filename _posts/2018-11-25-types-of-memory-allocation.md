@@ -253,7 +253,13 @@ int main () {
 }
 ```
 
+We have also two more functions to discuss here, `calloc()` and `realloc()`, they are very simple if you understand the concept of `malloc()` let's start with `calloc()`.
 
+`calloc()` is equal to `malloc()` with two differences: `calloc()` it initializes all values of your block with 0 while `malloc()` initializes each block with garbage values, and it takes two arguments, the number of blocks to be allocated and size of each block, with this, if you want to allocate an array of 10 ints, you don't need to multiply 10 by the size of each block, you just need to pass ten as argument.
+
+```c
+int *numbers = calloc(10, sizeof(int));
+```
 
 http://man.he.net/?topic=malloc&section=all
 https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
