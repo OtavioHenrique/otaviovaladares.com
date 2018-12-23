@@ -389,46 +389,53 @@ Unfortunately this is a part of programming that I see few authors writing about
 
 If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
 
-## Links
+### Links
 
-https://nptel.ac.in/courses/122104019/numerical-analysis/iitm/lIITM5.HTM
-https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
-https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/
-https://www.programiz.com/c-programming/c-dynamic-memory-allocation
+**Misc**
 
-https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
-https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation
-https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation
-https://en.wikipedia.org/wiki/C_dynamic_memory_allocation#Usage_example
-http://mpatrol.sourceforge.net/doc/Static-memory-allocations.html
-https://www.tutorialspoint.com/cprogramming/c_arrays.htm
-https://stackoverflow.com/questions/11720079/how-can-i-see-the-size-of-files-and-directories-in-linux
-https://www.geeksforgeeks.org/static-variables-in-c/
-https://www.geeksforgeeks.org/memory-layout-of-c-program/
-https://github.com/EdmundKorley/libfree/wiki/memory-layout-of-c-programs
-https://www.programiz.com/c-programming/c-arrays
-http://fractallambda.com/2014/10/30/Dynamic-Static-and-Automatic-memory.html
-https://www.includehelp.com/c/difference-between-automatic-auto-and-static-variables.aspx
-https://www.geeksforgeeks.org/memory-layout-of-c-program/
-http://mpatrol.sourceforge.net/doc/Static-memory-allocations.html
-https://en.wikipedia.org/wiki/Static_variable
-https://stackoverflow.com/questions/959889/difference-between-global-and-static-global
-https://stackoverflow.com/questions/44954524/difference-between-global-and-static-variable-in-c
-https://stackoverflow.com/questions/2271902/static-vs-global
-http://codingstreet.com/c-basic-questions/what-is-difference-between-global-and-static-variables-in-c/
-http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm
-https://overiq.com/c-programming-101/local-global-and-static-variables-in-c/
+[https://stackoverflow.com/questions/2034712/is-there-any-overhead-for-using-variable-length-arrays](What's the overhead of using VLAs)
 
-https://stackoverflow.com/questions/2034712/is-there-any-overhead-for-using-variable-length-arrays
-http://man.he.net/?topic=malloc&section=all
-https://www.quora.com/How-can-I-make-an-array-with-variable-size-in-the-C-language
+[How to use VLAs](https://www.quora.com/How-can-I-make-an-array-with-variable-size-in-the-C-language)
 
-http://man.he.net/?topic=malloc&section=all
-https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
-https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
-https://www.google.com.br/search?ei=fDsYXNSSDcSIwgTRj5P4DA&q=picoc+install+linux&oq=picoc+install+linux&gs_l=psy-ab.3..0i22i30.8552.9881..9999...0.0..0.438.1459.2-4j0j1......0....1..gws-wiz.......0i71j0i22i10i30j0i8i13i30.S1Ytz9NDk6o
-https://www.tutorialspoint.com/cprogramming/c_data_types.htm
+[https://www.tutorialspoint.com/cprogramming/c_data_types.htm](C data types)
+
+[http://fractallambda.com/2014/10/30/Dynamic-Static-and-Automatic-memory.html](Dynamic, static and automatic memory)
+
+[https://www.includehelp.com/c/difference-between-automatic-auto-and-static-variables.aspx](Difference between automatic, static and dynamic variable)
+
+[Types of variables](http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm)
 
 
-https://pt.wikipedia.org/wiki/Stdlib.h
-http://man.he.net/?topic=malloc&section=all
+**Dynamic memory allocation**
+
+[Wikpedia of dynamic memory allocation](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation)
+
+[What is dynamic memory allocation](https://www.geeksforgeeks.org/what-is-dynamic-memory-allocation/)
+
+[C dynamic memory allocation](https://www.programiz.com/c-programming/c-dynamic-memory-allocation)
+
+[Differente between static and dynamic memory allocation](https://stackoverflow.com/questions/8385322/difference-between-static-memory-allocation-and-dynamic-memory-allocation)
+
+[https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm](C function malloc)
+
+[https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm](stdlib.h)
+
+[http://man.he.net/?topic=malloc&section=all](Nice guide about malloc)
+
+**Static memory allocation**
+
+[http://mpatrol.sourceforge.net/doc/Static-memory-allocations.html](Static memory allocation)
+
+[https://www.geeksforgeeks.org/static-variables-in-c/](Static variables in C)
+
+[https://en.wikipedia.org/wiki/Static_variable](Wikpedia page of Static variable)
+
+[https://stackoverflow.com/questions/959889/difference-between-global-and-static-global](Difference between global and static global)
+
+[https://stackoverflow.com/questions/44954524/difference-between-global-and-static-variable-in-c](Difference between global and static variable in C)
+
+[https://stackoverflow.com/questions/2271902/static-vs-global](Static vs Global variables)
+
+[http://codingstreet.com/c-basic-questions/what-is-difference-between-global-and-static-variables-in-c/](Difference between global and static variable in C)
+
+[Local global and static variable](https://overiq.com/c-programming-101/local-global-and-static-variables-in-c/)
