@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        "Types of Memory Allocation, a brief view"
-subtitle:     "Understanding the basics"
+subtitle:     "Understanding the particularities of each type"
 date:         2018-11-25 01:10:00
 author:       "Octos"
 header-img:   "img/in-post/pointers/pointers-brief-view.jpg"
@@ -15,9 +15,11 @@ tags:
   - Beginners
 ---
 
-A few months ago, I started a series of posts about important topics of C programming and computer architecture, the first post was about pointers and you can check [here](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/), on this post I'll talk about dynamic memory allocation, I'll show what problem it solves and how to use.
+A few months ago, I started a series of posts about important topics of C programming and computer architecture, the first post was about pointers and you can check [here](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/), on this post I'll talk about types of memory allocation.
 
 I've many criticisms about some ways that people usually teaches C programming, one of these is that is very difficult to find someone that explain the difference between each type of variable and allocation, they usually only say "that is a variable and use it" or "look, this is a malloc(), start using it", on this text I'll try to show the difference between each type, for those who didn't learn it learn and for those who learned it remember it!
+
+This is a topic that I see few authors writing about, and I think few people have learned about this while studying C programming,on this post(and on the next talking about C memory layout), I hope I help people understand better this part of computer programs.
 
 ## Types of Allocation
 
@@ -27,7 +29,7 @@ I've many criticisms about some ways that people usually teaches C programming, 
 
 Automatic memory allocation corresponds to the automatic variables, also known as "stack" memory, it's memory allocated at runtime when you enter into a new scope, each time that a function is called its auto variables are pushed to stack.
 
-*Worried because you don't know what is stack, don't panic, this will be explained on the next topic.*
+*Worried because you don't know what is stack, don't panic, this will be explained on the next post.*
 
 What it really means? An auto variable is every variable that you declare and don't use any keyword (like `static`), simplifying, variables that you declare inside your `main` function or inside any function can be considered auto variables, therefore, automatic memory allocation.
 
@@ -136,7 +138,7 @@ They are allocated on compile time that fixes their addresses and sizes (so, the
 
 It's important to know that they aren't stored at stack like automatic allocation, or at the heap (like the dynamic allocation that we'll see bellow), this kind of variable are stored in the data segment of the programs address space if the are initialized or the BSS segment if they aren't initialized.
 
-*Worried because you don't know what is BSS/Data Segment/Stack/Heap? Don't panic, this will be explained on the next topic.*
+*Worried because you don't know what is BSS/Data Segment/Stack/Heap? Don't panic, this will be explained on the next post.*
 
 The compiler fixes the address and size of the static variable at compile time, so a static variable can only be initialized using constant literals, because the compiler needs to know the value of the variable, you can't initialize a static variable with a returned value of a function for example, the fallowing program will generates a compile error:
 
@@ -182,6 +184,8 @@ Static variables are statically allocated and their size and addresses are fixed
 The famous dynamic memory(aka DMA) allocation that scares a bunch of people at the college, it isn't a brain surgery and I'll prove to you, dynamic memory allocation can be very interesting and fun if you really understand it from the beginning.
 
 *Reinforcing the importance of pointers to dynamic memory allocation, I suggest that you have a solid knowledge of pointers, you can read any tutorial on the internet, or [the one that I have here, on my blog](https://otaviovaladares.com/2018/08/12/pointer-a-brief-view/).*
+
+Different from previous examples, dynamic memory is allocated on the heap, that I'll explain in details on next post.
 
 To dynamic allocate memory in C language(this part its different from C++), you need to include `stdlib.h` to have access to functions that C provides to dynamic allocation, you can check all functions that you'll gain access [here](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm) but on this post we'll only take a look at only four of them:
 
@@ -374,6 +378,12 @@ This is the best solution and its using DMA on the right way, you're using heap 
 #### Summarize
 
 The necessity of dynamically allocate memory is a reality on everyday programmers day, you'll need to know how to use `malloc()` to allocate heap memory at runtime, the advantages are many, you have full control of your memory, you choose when you want to free this memory, and you gain control over memory usage of your software.
+
+### Conclusion
+
+Understand the difference between each type of memory allocation is good to understand correctly how your C software works under a microscope, on this post we discussed about each type and on next post we'll talk about memory layout of C programs, with both knowledge, you'll have complete understanding of this part of C softwares and will write and understand your software better.
+
+Unfortunately this is a part of programming that I see few authors writing about, on this post and on the next I hope I can help people understand software better.
 
 ### Final thought
 
