@@ -2,7 +2,7 @@
 layout:       post
 title:        "Types of Memory Allocation, a brief view"
 subtitle:     "Understanding the particularities of each type"
-date:         2018-11-25 01:10:00
+date:         2018-12-23 01:10:00
 author:       "Octos"
 header-img:   "img/in-post/types-of-memory-allocation/amazonia.jpg"
 header-mask:  0.5
