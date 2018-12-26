@@ -78,6 +78,22 @@ The key point about pricing of S3 Standard-IA is that: Storage is cheap if you c
 | PUT, COPY, POST or LIST Request | $0.01 per 1,000 requests |
 | GET, SELECT and all other requests | $0.001 per 1,000 requests |
 
+### Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)
+
+This is the younger brother of S3 Standard-IA, and is almost the same service, the different is that it stores your data at only one AZ (Availability Zone) unlike other S3 storage classes which store data in a minimum of three. With this trade-off, it costs 20% less than its older brother. It's ideal for customers who want a lower-cost option for infrequently accesses data.
+
+#### Key Features
+
+The key features are the same of S3 Standard-IA, with the difference of the availability of 99.5% (Compared with 99.9% of Standard-IA).
+
+#### Pricing
+
+The request price is the same of Standard-IA, and the storage price is 20% cheaper.
+
+| Storage | Price |
+|-------------|---------------|
+| All storage / Month | $0.01 per GB |
+
 ### Amazon S3 Intelligent-Tiering
 
 This is the most interesting and newer one, it was released at November 2018, we saw that for high-usage files is better to use S3 Standard and to infrequent access data use Standard-IA, this is nice but we have one problem that some users already know, what we do if we don't know the access pattern of the object? or if we don't feel confident to change one object of standard to Standard-IA?
