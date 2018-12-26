@@ -15,7 +15,6 @@ tags:
   - Cloud
 ---
 
-
 Amazon web services aka AWS provides a few ways of storage your files using the popular service S3(Simple Storage Service), the most common is the called S3 Standard that I think most people use on normal day to day workflow, other common storage class is the famous S3 Glacier, but I don't think most people knows what is Standard-IA storage class, or One Zone-IA, on this post I want to write about each one and its uses cases.
 
 *It's important to emphasize that this post is dated December 2018 and AWS is constantly changing and adding new features and probably, storage classes, if this post is outdated, please comment or check at my blog if you find a newer one.*
@@ -45,6 +44,39 @@ Like almost all services provided, S3 has a long table of pricing separated by s
 The S3 Standard Storage is the cheaper storage class when talking about request pricing and this is the main reason why you should use default S3 storage when you're working with heavy access, you pay a nice price like $0.0004 per 1.000 GET requests.
 
 *At the end of the text I'll make a better comparison between each type and pricing*
+
+### Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
+
+S3 Standard-IA is for data that is accessed less frequently, but when required needs a fast access. You have the minimum storage period of 30 days and a minimum object size of 128KB. It is recommended for backups or logs(depending of the size of your logs, of course!).
+
+Summarizing: All data that will not be accessed once a month and when required needs to be recovered just in time, you use S3 Standard-IA. Obviously, the problem is that you need to know previously the access pattern of your object, but as we'll see later, this problem is already solved by Amazon S3 Intelligent-Tiering.
+
+#### Key Features
+
+- Same low latency and high throughput performance of S3 Standard
+- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+- Resilient against events that impact an entire Availability Zone
+- Data is resilient in the event of one entire Availability Zone destruction
+- Designed for 99.9% availability over a given year
+- Backed with the Amazon S3 Service Level Agreement for availability
+- Supports SSL for data in transit and encryption of data at rest
+- S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes
+
+#### Pricing
+
+The key point about pricing of S3 Standard-IA is that: Storage is cheap if you compare S3 standard, but request is expensive.
+
+| Storage | Price |
+|-------------|---------------|
+| All storage / Month | $0.0125 per GB |
+
+| Requests | Price |
+|-------------|---------------|
+| Data Retrievals | $0.01 per GB |
+| Data Returned by S3 Select | $0.01 per GB |
+| Data Scanned by S3 Select | $0.01 per GB |
+| PUT, COPY, POST or LIST Request | $0.01 per 1,000 requests |
+| GET, SELECT and all other requests | $0.001 per 1,000 requests |
 
 ### Amazon S3 Intelligent-Tiering
 
@@ -96,4 +128,3 @@ For requests we have the same price of standard tier.
 | PUT, COPY, POST or LIST Request | $0.0005 per 1,000 requests |
 | GET, SELECT and all other requests | $0.0004 per 1,000 requests |
 
-### Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
