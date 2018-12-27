@@ -15,7 +15,7 @@ tags:
   - Cloud
 ---
 
-Amazon web services aka AWS provides a few ways of storage your files using the popular service S3(Simple Storage Service), the most common is the called S3 Standard that I think most people use on normal day to day workflow, other common storage class is the famous S3 Glacier, but I don't think most people knows what is Standard-IA storage class, or One Zone-IA, on this post I want to write about each one and its uses cases.
+Amazon web services aka AWS provides a few ways of storing your files using the popular service S3(Simple Storage Service), the most common is the called S3 Standard that I think most people use on a normal day to day workflow, another common storage class is the famous S3 Glacier, but I don't think most people know what is Standard-IA storage class, or One Zone-IA, in this post I want to write about each one and its uses cases.
 
 *It's important to emphasize that this post is dated December 2018 and AWS is constantly changing and adding new features and probably, storage classes, if this post is outdated, please comment or check at my blog if you find a newer one.*
 
@@ -39,7 +39,7 @@ As the [aws official website say](https://aws.amazon.com/s3/storage-classes/), t
 
 #### Pricing
 
-Like almost all services provided, S3 has a long table of pricing separated by store amount, requests, data transfer, management and transfer acceleration. You can check the full table [here](https://aws.amazon.com/s3/pricing/).
+Like almost all services provided, S3 has a long table of pricing separated by store amount, requests, data transfer, management, and transfer acceleration. You can check the full table [here](https://aws.amazon.com/s3/pricing/).
 
 The S3 Standard Storage is the cheaper storage class when talking about request pricing and this is the main reason why you should use default S3 storage when you're working with heavy access, you pay a nice price like $0.0004 per 1.000 GET requests.
 
@@ -47,7 +47,7 @@ The S3 Standard Storage is the cheaper storage class when talking about request 
 
 ### Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
 
-S3 Standard-IA is for data that is accessed less frequently, but when required needs a fast access. You have the minimum storage period of 30 days and a minimum object size of 128KB. It is recommended for backups or logs(depending of the size of your logs, of course!).
+S3 Standard-IA is for data that is accessed less frequently, but when required needs fast access. You have the minimum storage period of 30 days and a minimum object size of 128KB. It is recommended for backups or logs(depending on the size of your logs, of course!).
 
 Summarizing: All data that will not be accessed once a month and when required needs to be recovered just in time, you use S3 Standard-IA. Obviously, the problem is that you need to know previously the access pattern of your object, but as we'll see later, this problem is already solved by Amazon S3 Intelligent-Tiering.
 
@@ -64,7 +64,7 @@ Summarizing: All data that will not be accessed once a month and when required n
 
 #### Pricing
 
-The key point about pricing of S3 Standard-IA is that: Storage is cheap if you compare S3 standard, but request is expensive.
+The key point about pricing of S3 Standard-IA is that: Storage is cheap if you compare S3 standard, but a request is expensive.
 
 | Storage | Price |
 |-------------|---------------|
@@ -80,15 +80,15 @@ The key point about pricing of S3 Standard-IA is that: Storage is cheap if you c
 
 ### Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)
 
-This is the younger brother of S3 Standard-IA, and is almost the same service, the different is that it stores your data at only one AZ (Availability Zone) unlike other S3 storage classes which store data in a minimum of three. With this trade-off, it costs 20% less than its older brother. It's ideal for customers who want a lower-cost option for infrequently accesses data.
+This is the younger brother of S3 Standard-IA and is almost the same service, the difference is that it stores your data at only one AZ (Availability Zone), unlike other S3 storage classes which store data in a minimum of three. With this trade-off, it costs 20% less than its older brother. It's ideal for customers who want a lower-cost option for infrequently accesses data.
 
 #### Key Features
 
-The key features are the same of S3 Standard-IA, with the difference of the availability of 99.5% (Compared with 99.9% of Standard-IA).
+The key features are the same as S3 Standard-IA, with the difference in the availability of 99.5% (Compared with 99.9% of Standard-IA).
 
 #### Pricing
 
-The request price is the same of Standard-IA, and the storage price is 20% cheaper.
+The request price is the same as Standard-IA, and the storage price is 20% cheaper.
 
 | Storage | Price |
 |-------------|---------------|
@@ -96,11 +96,11 @@ The request price is the same of Standard-IA, and the storage price is 20% cheap
 
 ### Amazon S3 Intelligent-Tiering
 
-This is the most interesting and newer one, it was released at November 2018, we saw that for high-usage files is better to use S3 Standard and to infrequent access data use Standard-IA, this is nice but we have one problem that some users already know, what we do if we don't know the access pattern of the object? or if we don't feel confident to change one object of standard to Standard-IA?
+This is the most interesting and newer one, it was released at November 2018, we saw that for high-usage files is better to use S3 Standard and to infrequent access data use Standard-IA, this is nice but we have one problem that some users already know, what we do if we don't know the access pattern of the object? or if we don't feel confident to change one object of the standard to Standard-IA?
 
 Now imagine if Amazon creates something to do that for you? And they did it, and the problem has gone, this creation is the new Amazon S3 Intelligent-Tiering, it is designed for who want to optimize storage costs automatically when data access patterns change or you don't know it.
 
-It works with two objects tiers, one tier is similar do S3 Standard and another tier that is similar to Standard-IA, all object when uploaded is moved to the first tier that is for frequent access data, if the object have not been accesses for 30 consecutive days, amazon moves it to the second tier that is for infrequent access data. Amazing, isn't it?
+It works with two objects tiers, one tier is similar do S3 Standard and another tier that is similar to Standard-IA, all object, when uploaded, is moved to the first tier that is for frequent access data, if the object has not been accessed for 30 consecutive days, Amazon moves it to the second tier that is for infrequent access data. Amazing, isn't it?
 
 *Objects smaller than 128KB will never be transitioned to the infrequent access tier*
 *It's important to point that we don't have retrieval fees on this storage class.*
@@ -117,11 +117,11 @@ It works with two objects tiers, one tier is similar do S3 Standard and another 
 - Supports SSL for data in transit and encryption of data at rest
 - S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes
 
-As you can see the key features are almost the same, except for the 99.9% availability (comparing with 99.99% of standard S3) and the feature of automatically moves object between access tiers.
+As you can see the key features are almost the same, except for the 99.9% availability (comparing with 99.99% of standard S3) and the feature of automatically moves the object between access tiers.
 
 #### Pricing
 
-The price is awesome too, when talking about storage pricing we have the same price of standard storage on frequent access tier, and the same price of Standard-IA to infrequent access tier.
+The price is awesome too when talking about storage pricing we have the same price of standard storage on frequent access tier, and the same price of Standard-IA to infrequent access tier.
 
 | Storage | Price |
 |-------------|---------------|
@@ -135,7 +135,7 @@ The price is awesome too, when talking about storage pricing we have the same pr
 |-------------|---------------|
 | All storage | $0.0025 per 1,000 objects |
 
-For requests we have the same price of standard tier.
+For requests, we have the same price as the standard tier.
 
 | Requests | Price |
 |-------------|---------------|
@@ -146,22 +146,22 @@ For requests we have the same price of standard tier.
 
 ### S3 Glacier
 
-Glacier is designed to data archive, if you have some data that you think you'll never need again and if needed you can wait for almost 5 hours of recovery process, go ahead and use Glacier, the price of the storage is the cheaper of the S3 classes. Example of things to store on S3 Glacier: Old logs that you can't delete, old database dumps or your wedding pictures(just kidding but is a great idea).
+Glacier is designed to data archive if you have some data that you think you'll never need again and if needed you can wait for almost 5 hours of the recovery process, go ahead and use Glacier, the price of the storage is the cheaper of the S3 classes. Example of things to store on S3 Glacier: Old logs that you can't delete, old database dumps or your wedding pictures(just kidding but is a great idea).
 
-One common action when working with Glacier is to setup a lifecycle policy to archive on Glacier data from S3 Standard bucket after `n` time, for example 360 days, this is a amazing feature and provides a nice power to you.
+One common action when working with Glacier is to setup a lifecycle policy to archive on Glacier data from S3 Standard bucket after `n` time, for example, 360 days, this is an amazing feature and provides a nice power to you.
 
 #### Key Features
 
 - Designed for durability of 99.999999999% of objects across multiple Availability Zones
 - Data is resilient in the event of one entire Availability Zone destruction
 - Supports SSL for data in transit and encryption of data at rest
-- Low-cost design is ideal for long-term archive
+- The low-cost design is ideal for long-term archive
 - Configurable retrieval times, from minutes to hours
-- S3 PUT API for direct uploads to S3 Glacier, and S3 Lifecycle management for automatic migration of objects
+- S3 PUT API for direct uploads to S3 Glacier and S3 Lifecycle management for automatic migration of objects
 
 #### Pricing
 
-Amazon S3 Glacier has a extremely low cost of storage, cheaper than all other services that we studied.
+Amazon S3 Glacier has an extremely low cost of storage, cheaper than all other services that we studied.
 
 | Storage | Price |
 |-------------|---------------|
@@ -177,7 +177,7 @@ AWS provides three retrieval options, Expedited, Standard, Bulk, that range from
 
 ### Conclusion
 
-All storage class has its specific case of use, choose one used to be a problem when you don't know the access pattern of the object, but today with S3 Intelligent-Tiering isn't anymore you can enable it and amazon take a care for you, if add a lifecycle police to archive data from this bucket to Glacier after some time, you are with a amazing solution at your hands.
+All storage class has its specific case of use, choose one used to be a problem when you don't know the access pattern of the object, but today with S3 Intelligent-Tiering isn't any more you can enable it and Amazon take a care for you, if add a lifecycle police to archive data from this bucket to Glacier after some time, you are with an amazing solution at your hands.
 
 If you know the access pattern, just choose the better to your case and use it, S3 is amazing and cheap!
 
