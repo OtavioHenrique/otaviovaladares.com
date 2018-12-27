@@ -3,7 +3,7 @@ layout:       post
 title:        "Pointers, a brief view"
 subtitle:     "Understanding the basics"
 date:         2018-08-12 13:10:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/pointers/pointers-brief-view.jpg"
 header-mask:  0.5
 catalog:      true

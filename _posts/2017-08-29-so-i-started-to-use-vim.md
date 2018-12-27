@@ -3,7 +3,7 @@ layout:     post
 title:      "So, I started to use Vim"
 sybtitle:   "and it isn’t too hard"
 date:       2017-08-29 00:00:00
-author:     "Octos"
+author:     "Otavio H. P. Valadares"
 header-img: "img/in-post/started-use-vim/vim-console.jpg"
 header-mask:  0.5
 tags:

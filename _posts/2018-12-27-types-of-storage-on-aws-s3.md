@@ -1,10 +1,10 @@
 ---
 layout:       post
 title:        "Types of storage on AWS S3"
-subtitle:     "Understanding the particularities of each type"
-date:         2018-12-23 01:10:00
-author:       "Octos"
-header-img:   "img/in-post/types-of-memory-allocation/amazonia.jpg"
+subtitle:     "Understanding the particularities of each class"
+date:         2018-12-27 01:10:00
+author:       "Otavio H. P. Valadares"
+header-img:   "img/in-post/types-of-storage-class/amazon.jpg"
 header-mask:  0.5
 catalog:      true
 multilingual: true

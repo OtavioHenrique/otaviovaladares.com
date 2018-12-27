@@ -3,7 +3,7 @@ layout: post
 title: "Migrating from vim to neovim"
 subtitle: "All steps to a peaceful migration"
 date: 2018-09-30 00:28:00
-author: "Otavio Valadares"
+author: "Otavio H. P. Valadares"
 header-img: "img/in-post/migrating-from-vim-to-nvim/nvim.png"
 header-mask: 0.5
 catalog: true

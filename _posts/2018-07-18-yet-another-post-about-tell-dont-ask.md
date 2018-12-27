@@ -3,7 +3,7 @@ layout:       post
 title:        "Yet, another post about tell don't ask"
 subtitle:     "Stop treating objects like C structures"
 date:         2018-07-22 23:05:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/ask-dont-tell/adt.jpg"
 header-mask:  0.5
 catalog:      true

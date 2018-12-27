@@ -3,7 +3,7 @@ layout:       post
 title:        "Types of Memory Allocation, a brief view"
 subtitle:     "Understanding the particularities of each type"
 date:         2018-12-23 01:10:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/types-of-memory-allocation/amazonia.jpg"
 header-mask:  0.5
 catalog:      true

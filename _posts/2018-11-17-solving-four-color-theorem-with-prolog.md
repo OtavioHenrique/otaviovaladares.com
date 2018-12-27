@@ -3,7 +3,7 @@ layout: post
 title: "Four color theorem with Prolog"
 subtitle: "Showing four color theorem on the map of Brazil"
 date: 2018-11-18 00:28:00
-author: "Otavio Valadares"
+author: "Otavio H. P. Valadares"
 header-img: "img/in-post/solving-four-color-theorem-with-prolog/bg.jpg"
 header-mask: 0.7
 catalog: true

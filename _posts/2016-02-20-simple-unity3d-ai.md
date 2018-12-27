@@ -3,7 +3,7 @@ layout:     post
 title:      "Simple Enemy AI System for Unity3D"
 sybtitle:   "Simple tutorial to get start with enemies"
 date:       2016-02-30 00:00:00
-author:     "Octos"
+author:     "Otavio H. P. Valadares"
 header-img: "img/in-post/post-simple-unity3d-ai/ai.jpg"
 catalog:    true
 header-mask:  0.3

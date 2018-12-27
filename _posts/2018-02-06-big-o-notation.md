@@ -3,7 +3,7 @@ layout:       post
 title:        "Understanding basic of Big O notation"
 subtitle:     "without a lot of mathematic"
 date:         2018-02-08 01:36:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/bigo/algorithm.png"
 header-mask:  0.5
 catalog:      true

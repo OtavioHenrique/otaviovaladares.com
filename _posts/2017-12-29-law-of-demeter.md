@@ -3,7 +3,7 @@ layout:       post
 title:        "Understanding Law of Demeter"
 subtitle:     "Understanding Law of Demeter"
 date:         2017-12-29 00:00:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/law-of-demeter/neighborhood.jpg"
 catalog:      true
 header-mask:  0.5

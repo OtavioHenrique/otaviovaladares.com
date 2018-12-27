@@ -3,7 +3,7 @@ layout: post
 title: "Automate the boring stuff with Python review"
 subtitle: "The book review of Automate the boring stuff with Python"
 date: 2018-11-11 11:34:00
-author: "Otavio Valadares"
+author: "Otavio H. P. Valadares"
 header-img: "img/in-post/book-review-python-automate-boring-stuff/bf.jpg"
 header-mask: 0.5
 catalog: true

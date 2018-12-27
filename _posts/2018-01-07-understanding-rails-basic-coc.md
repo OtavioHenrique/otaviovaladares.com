@@ -3,7 +3,7 @@ layout:       post
 title:        "Understanding rails basic CoC under scaffold for begginers"
 subtitle:     "Simple tutorial for begginer about rails CoC"
 date:         2018-01-07 22:00:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/understanding-coc-under-sacaffold/scaffold.jpg"
 header-mask:  0.5
 catalog:      true

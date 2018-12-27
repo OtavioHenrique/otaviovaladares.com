@@ -3,7 +3,7 @@ layout:       post
 title:        "each, map, select in ruby? Understanding Enumerable"
 subtitle:     "stop guessing forever"
 date:         2018-06-02 04:04:00
-author:       "Octos"
+author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/enumerable/banner.jpeg"
 header-mask:  0.5
 catalog:      true
