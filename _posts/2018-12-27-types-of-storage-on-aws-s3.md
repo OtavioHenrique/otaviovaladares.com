@@ -144,3 +144,57 @@ For requests we have the same price of standard tier.
 | PUT, COPY, POST or LIST Request | $0.0005 per 1,000 requests |
 | GET, SELECT and all other requests | $0.0004 per 1,000 requests |
 
+### S3 Glacier
+
+Glacier is designed to data archive, if you have some data that you think you'll never need again and if needed you can wait for almost 5 hours of recovery process, go ahead and use Glacier, the price of the storage is the cheaper of the S3 classes. Example of things to store on S3 Glacier: Old logs that you can't delete, old database dumps or your wedding pictures(just kidding but is a great idea).
+
+One common action when working with Glacier is to setup a lifecycle policy to archive on Glacier data from S3 Standard bucket after `n` time, for example 360 days, this is a amazing feature and provides a nice power to you.
+
+#### Key Features
+
+- Designed for durability of 99.999999999% of objects across multiple Availability Zones
+- Data is resilient in the event of one entire Availability Zone destruction
+- Supports SSL for data in transit and encryption of data at rest
+- Low-cost design is ideal for long-term archive
+- Configurable retrieval times, from minutes to hours
+- S3 PUT API for direct uploads to S3 Glacier, and S3 Lifecycle management for automatic migration of objects
+
+#### Pricing
+
+Amazon S3 Glacier has a extremely low cost of storage, cheaper than all other services that we studied.
+
+| Storage | Price |
+|-------------|---------------|
+| All storage / Month | $0.004 per GB |
+
+AWS provides three retrieval options, Expedited, Standard, Bulk, that range from a few minutes to hours and obviously from the cheapest to the most expensive one.
+
+| | Expedited | Standard | Bulk |
+|-------------|--------|-------|
+| Retrieval Time | 1-5 Minutes | 3-5 hours | 5-12 hours
+| Data Retrievals | $0.03 / GB | $0.01 / GB | $0.0025 / GB
+| Retrievals Requests | $0.01 / Request | $0.050 / 1k Request | $0.025 / 1k Request
+
+### Conclusion
+
+All storage class has its specific case of use, choose one used to be a problem when you don't know the access pattern of the object, but today with S3 Intelligent-Tiering isn't anymore you can enable it and amazon take a care for you, if add a lifecycle police to archive data from this bucket to Glacier after some time, you are with a amazing solution at your hands.
+
+If you know the access pattern, just choose the better to your case and use it, S3 is amazing and cheap!
+
+### Final thought
+
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+
+### Links
+
+[AWS blog post about Intelligent Tiering](https://aws.amazon.com/blogs/aws/new-automatic-cost-optimization-for-amazon-s3-via-intelligent-tiering/)
+
+[Annoucing S3 Intelligent-Tiering](https://aws.amazon.com/about-aws/whats-new/2018/11/s3-intelligent-tiering/)
+
+[S3 Pricing list](https://aws.amazon.com/s3/pricing/)
+
+[S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
+
+[Glacier Retrieval Pricing Explained](https://www.cloudberrylab.com/resources/blog/amazon-glacier-retrieval-pricing-explained/)
+
+[How to Cut your S3 Cost in Half by Using the S3 Infrequent Access Storage Class](https://www.concurrencylabs.com/blog/save-money-using-s3-infrequent-access/)
