@@ -62,6 +62,7 @@ int counter = 0;
 
 printf("Variable Address: %p\n", &counter);
 ```
+
 ```
 Variable Address: 0x7ffeccd5f0d4
 ```
@@ -78,6 +79,7 @@ int age = 0;
 printf("Variable Address: %p\n", &counter);
 printf("Variable Address: %p\n", &age);
 ```
+
 ```
 Variable Address: 0x7ffe3606fd60
 Variable Address: 0x7ffe3606fd64
@@ -161,18 +163,18 @@ When you pass a something to a function in C and make changes to it, that change
 
 ```c
 void sum(int counter, int age) {
-counter = counter + age;
+    counter = counter + age;
 
-printf("counter value: %i\n", counter);
+    printf("counter value: %i\n", counter);
 }
 
 int main() {
-int counter = 10;
-int age = 5;
+    int counter = 10;
+    int age = 5;
 
-sum(counter, age);
+    sum(counter, age);
 
-printf("response value: %i\n", counter);
+    printf("response value: %i\n", counter);
 }
 ```
 
@@ -191,18 +193,18 @@ But in C we can do what we call pass by reference, we call the function passing 
 
 ```c
 void sum(int *counter, int age) {
-*counter = *counter + age;
+    *counter = *counter + age;
 
-printf("counter value: %i\n", *counter);
+    printf("counter value: %i\n", *counter);
 }
 
 int main() {
-int counter = 10;
-int age = 5;
+    int counter = 10;
+    int age = 5;
 
-sum(&counter, age);
+    sum(&counter, age);
 
-printf("response value: %i\n", counter);
+    printf("response value: %i\n", counter);
 }
 ```
 
