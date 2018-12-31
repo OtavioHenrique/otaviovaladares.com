@@ -1,6 +1,6 @@
 # Site settings
-title: O.Valadares' Blog
-SEOTitle: Otavio Valadares' Blog
+title: O. Valadares' Blog
+SEOTitle: Otavio H. P. Valadares' Blog
 header-img: img/home-bg.jpg
 email: otaviopvalares@gmail.com
 description: "My personal blog where I usually post about my experiences and studies"
@@ -15,7 +15,7 @@ RSS: false
 # weibo_username:     huxpro
 # zhihu_username:     huxpro
 github_username:    OtavioHenrique
-twitter_username:  https://twitter.com/ValadaresOtavio
+twitter_username:  https://twitter.com/opvaladares
 facebook_username:  otavio.henrique.560
 linkedin_username:  otavio-henrique
 
