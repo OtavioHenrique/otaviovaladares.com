@@ -2,7 +2,7 @@
 layout:       post
 title:        "Antipatterns of stability"
 subtitle:     "Let's talk about some antipatterns"
-date:         2019-05-13 02:04:00
+date:         2019-05-20 02:04:00
 author:       "Otavio H. P. Valadares"
 header-img:   "img/in-post/antipatterns-stability/mym.jpeg"
 header-mask:  0.5
