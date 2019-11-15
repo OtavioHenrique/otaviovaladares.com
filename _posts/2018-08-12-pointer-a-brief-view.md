@@ -216,4 +216,4 @@ On this post we talked about all the basics behind pointers in C, it's not a sim
 
 On next three posts I'll talk more about pointers, I will write about pointers in arrays and strings, dynamic and static memory allocation and function pointers.
 
-Feel free to ask any questions at my [twitter](https://twitter.com/opvaladares), email or comment this post.
+Feel free to ask any questions at my [twitter](https://twitter.com/valadaresotavio), email or comment this post.

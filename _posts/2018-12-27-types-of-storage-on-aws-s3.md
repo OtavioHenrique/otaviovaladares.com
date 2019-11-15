@@ -183,7 +183,7 @@ If you know the access pattern, just choose the better to your case and use it, 
 
 ### Final thought
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/valadaresotavio) or comment on this post!
 
 ### Links
 

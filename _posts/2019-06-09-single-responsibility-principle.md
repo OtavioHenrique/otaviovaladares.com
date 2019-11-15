@@ -138,4 +138,4 @@ Like every pattern or practice, the heavy use of it without rational thinking ca
 
 If you liked this post probably you'll enjoy my post about tell don't ask [here](https://otaviovaladares.com/2018/07/22/yet-another-post-about-tell-dont-ask/).
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/valadaresotavio) or comment on this post!

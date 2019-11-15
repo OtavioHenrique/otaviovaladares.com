@@ -71,4 +71,4 @@ Spread the rule on your project doesn't work, sometimes your design is wrong, an
 ## Ending
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/opvaladares).
+[twitter](https://twitter.com/valadaresotavio).

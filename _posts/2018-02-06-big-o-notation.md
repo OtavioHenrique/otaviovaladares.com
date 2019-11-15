@@ -448,7 +448,7 @@ You can fallow the reference links bellow and study by yourself.
 
 It wasn a very long post, and I know it, but I think that a good understand of the big o principles is important for a lot of software engineers, to the day work or for coding interviews.
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/valadaresotavio) or comment on this post!
 
 # 7. Reference
 

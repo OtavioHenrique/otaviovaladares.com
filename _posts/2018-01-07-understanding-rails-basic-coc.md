@@ -391,4 +391,4 @@ Everything is done, if you have any question, please ask.
 The code of the example can be found [here](https://github.com/OtavioHenrique/scaffold_example)
 
 That’s all for today folks, don’t forget to follow my blog and my
-[twitter](https://twitter.com/opvaladares).
+[twitter](https://twitter.com/valadaresotavio).

@@ -237,7 +237,7 @@ This isn't easy get started thinking like this and correcting your errors, but y
 
 [I have an old post about law of demeter that can interest you](https://otaviovaladares.com/2017/12/29/law-of-demeter/)
 
-Thanks all for read this post, don't forget to follow me on [twitter](https://twitter.com/opvaladares), any questions you can send me an email, have good days.
+Thanks all for read this post, don't forget to follow me on [twitter](https://twitter.com/valadaresotavio), any questions you can send me an email, have good days.
 
 ## Useful links
 

@@ -100,4 +100,4 @@ Nvim have some plugins that take advantage of specific nvim features, you can ch
 
 It wasn't a very long post, and it's purposeful, I don't have much to talk about neovim yet, the objective of this post It only talks about how I migrate from vim to neovim. On next weeks I'll write about my plugins and describing some tricks of my vim/nvim configs.
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/valadaresotavio) or comment on this post!

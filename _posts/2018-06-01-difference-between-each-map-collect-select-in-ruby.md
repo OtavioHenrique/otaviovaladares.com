@@ -209,7 +209,7 @@ A lot of people when are starting with ruby programming think all these methods 
 
 [I pretty recommend that you read the documentation of Enumerable](https://ruby-doc.org/core-2.5.1/Enumerable.html)
 
-If you have any question that I can help you, please ask! Send email (otaviopvaladares@gmail.com), pm me on my [twitter](https://twitter.com/opvaladares) or comment this post!
+If you have any question that I can help you, please ask! Send email (otaviopvaladares@gmail.com), pm me on my [twitter](https://twitter.com/valadaresotavio) or comment this post!
 
 [Don't forget to fallow me on twitter](https://twitter.com/ValadaresOtavio)
 

@@ -58,4 +58,4 @@ This is my first book review and I'll try to get better on the next review posts
 
 If you want to know more about this book, you can check here: https://automatetheboringstuff.com/
 
-If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/opvaladares) or comment on this post!
+If you have any question that I can help you, please ask! Send an email (otaviopvaladares@gmail.com), pm me on my [Twitter](https://twitter.com/valadaresotavio) or comment on this post!

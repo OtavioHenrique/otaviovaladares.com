@@ -270,6 +270,6 @@ the project/code, I was 16 years old when I wrote this.
 
 [https://github.com/OtavioHenrique/simpleAI](https://github.com/OtavioHenrique/simpleAI)
 
-And ask me on my [Twitter](https://twitter.com/opvaladares)
+And ask me on my [Twitter](https://twitter.com/valadaresotavio)
 
 **Thanks guys, see you soon.**
