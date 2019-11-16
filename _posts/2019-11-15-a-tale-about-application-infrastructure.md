@@ -108,7 +108,7 @@ ___The image is illustrating a cluster of four nodes, each one running N contain
 
 When orchestrator starts to do its job, your infrastructure will have some kind of life, it will behave like an organism, it will boot new containers, kill old containers, replace unhealthy containers, scale your application based on metrics, share traffic between your N replicas, your application will have resilience and performance, a universe of possibilities will exist in your infrastructure based on this basic concept that uses Linux containers with clustering, load balancing, and metrics.
 
-Following this concept, a lot of technologies have emerged and become popular to orchestrate containers, like, ECS, Docker Swarm, ACS, GCE, and the most hyped, Kubernetes (K8s). Each one has its own peculiarities and properties (Kubernetes being the most complex of them).
+Following this concept, a lot of technologies have emerged and become popular to orchestrate containers, like, ECS, Docker Swarm, and the most hyped, Kubernetes (K8s). Each one has its own peculiarities and properties (Kubernetes being the most complex of them).
 
 Summarizing, container orchestration is the automation of all aspects of coordinating and managing your containers, it manages the lifecycle, scaling, redundancy and much more for you.
 
