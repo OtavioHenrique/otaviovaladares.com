@@ -194,7 +194,7 @@ Let’s begin with our example:
 
 ```elixir
 defmodule Geometry do
-  def area({:square, a}) when is_number(r) do
+  def area({:square, a}) when is_number(a) do
     {:ok, a * a}
   end
 
